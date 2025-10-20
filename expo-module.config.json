@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["RocketExpoModule"]
+  },
+  "android": {
+    "modules": ["com.shift72.rocketexpo.RocketExpoModule"]
+  }
+}

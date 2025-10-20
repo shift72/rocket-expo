@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "rocket-expo": ["../src/index"],
+      "rocket-expo/*": ["../src/*"]
+    }
+  }
+}
