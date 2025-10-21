@@ -1,0 +1,8 @@
+{
+  "android": {
+    "package": "com.anonymous.rocketexpo"
+  },
+  "ios": {
+    "bundleIdentifier": "com.anonymous.rocketexpo"
+  }
+}

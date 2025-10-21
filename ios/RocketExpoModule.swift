@@ -36,11 +36,11 @@ public class RocketExpoModule: Module {
     // view definition: Prop, Events.
     View(RocketExpoView.self) {
       // Defines a setter for the `url` prop.
-      Prop("url") { (view: RocketExpoView, url: URL) in
-        if view.webView.url != url {
-          view.webView.load(URLRequest(url: url))
-        }
-      }
+//      Prop("url") { (view: RocketExpoView, url: URL) in
+//        if view.webView.url != url {
+//          view.webView.load(URLRequest(url: url))
+//        }
+//      }
 
       Events("onLoad")
     }
