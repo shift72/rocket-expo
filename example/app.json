@@ -14,7 +14,8 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.shift72.rocketexpo.example"
+      "bundleIdentifier": "com.shift72.rocketexpo.example",
+      "appleTeamId": "JTA4CQ9S6G"
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +28,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "dynamic"
+          }
+        }
+      ]
+    ]
   }
 }

@@ -19,22 +19,13 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'
+  s.vendored_frameworks = 'Frameworks/Shift72RocketSDK.xcframework', 'Frameworks/GoogleCast.xcframework'
 
   # Swift/Objective-C compatibility
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
   }
 
-  s.source_files = "**/*.{h,m,mm,swift,hpp,cpp}"
-
-  if defined?(:spm_dependency)
-      spm_dependency(s,
-     url: 'https://github.com/shift72/rocket-sdk-ios.git',
-     requirement: {kind: 'upToNextMajorVersion', minimumVersion: '0.2.0'},
-     products: ['Shift72RocketSDK']
-   )   else
-    raise "Please upgrade React Native to >=0.75.0 to use SPM dependencies."
-  end
-
+  s.source_files = "src/**/*.{h,m,mm,swift,hpp,cpp}"
 
 end

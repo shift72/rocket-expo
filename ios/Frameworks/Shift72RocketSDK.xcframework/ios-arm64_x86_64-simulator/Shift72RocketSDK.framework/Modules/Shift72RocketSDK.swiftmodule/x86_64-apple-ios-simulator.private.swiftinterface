@@ -1,0 +1,157 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Shift72RocketSDK
+import AVFoundation
+import AVKit
+import Foundation
+import GoogleCast
+@_exported import Shift72RocketSDK
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class GoogleCastButton : GoogleCast.GCKUICastButton {
+  @_Concurrency.MainActor @preconcurrency public init(tintColor: UIKit.UIColor = .white, size: CoreFoundation.CGFloat = 24)
+  @objc deinit
+}
+public class RocketCaster {
+  public init()
+  public func cast(hostname: Swift.String, slug: Swift.String, token: Swift.String, completion: @escaping (Swift.Optional<Shift72RocketSDK.RocketPlayerError>) -> Swift.Void)
+  public static func launchInitialisation(applicationID: Swift.String)
+  public static var isConnected: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+public enum RocketPlayerErrorType : Swift.Int {
+  case ApiConnection
+  case ApiUrlMalformed
+  case ApiPayloadEncode
+  case ApiNotAuthorized
+  case ApiForbidden
+  case ApiNoData
+  case ApiBadResponse
+  case ApiDataDecode
+  case ApiUnknown
+  case DrmTooManyDevices
+  case DrmTooManyStreams
+  case DrmForbiddenCountry
+  case DrmNoUserAccess
+  case DrmUserAccessExpired
+  case DrmPlanExpired
+  case DrmRentalExpired
+  case DrmHttp
+  case DrmState
+  case DrmUnknown
+  case Playback
+  case PlaybackSlug
+  case PlaybackToken
+  case PlaybackConnection
+  case PlaybackHttp
+  case PlaybackDrm
+  case PlaybackIo
+  case PlaybackNonFatal
+  case PlaybackUnknown
+  case Download
+  case DownloadSlug
+  case DownloadToken
+  case DownloadUnknown
+  case GoogleCast
+  case GoogleCastEncoding
+  case GoogleCastChannel
+  case Hellscape
+  case Unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class RocketPlayerError : Swift.Error {
+  final public let type: Shift72RocketSDK.RocketPlayerErrorType
+  final public let message: Swift.String
+  public var localizedDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public class DefaultRocketPlayerDelegate : Shift72RocketSDK.RocketPlayerDelegate {
+  public init(parentViewController: UIKit.UIViewController)
+  public func onWatchWindow(timeToWatch: Swift.Int, response: @escaping (Shift72RocketSDK.WatchWindowResponse) -> Swift.Void)
+  public func onFoundPlaybackProgress(position: Swift.Int, length: Swift.Int, response: @escaping (Shift72RocketSDK.PlaybackProgressResponse) -> Swift.Void)
+  public func onTooManyDevicesPlaybackAborted()
+  public func onTooManyConcurrentStreamsPlaybackAborted()
+  public func onPlaybackStarted()
+  public func onPlaybackCompleted()
+  public func onErrorPlaybackAborted()
+  public func onAuthorizationErrorPlaybackAborted()
+  public func videoSizeChanged(width: Swift.Double, height: Swift.Double)
+  @objc deinit
+}
+public enum RocketPlayerLoggerArea {
+  case Drm
+  case Download
+  case Playback
+  case GoogleCast
+  public static func == (a: Shift72RocketSDK.RocketPlayerLoggerArea, b: Shift72RocketSDK.RocketPlayerLoggerArea) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol LoggerDelegate : AnyObject {
+  func error(error: Shift72RocketSDK.RocketPlayerError)
+  func info(area: Shift72RocketSDK.RocketPlayerLoggerArea, message: Swift.String)
+  func debug(area: Shift72RocketSDK.RocketPlayerLoggerArea, message: Swift.String)
+}
+@_hasMissingDesignatedInitializers public class Logger {
+  public static func setDelegate(_ delegate: any Shift72RocketSDK.LoggerDelegate)
+  @objc deinit
+}
+public class RocketPlayer {
+  public init(player: AVFoundation.AVPlayer, hostname: Swift.String, parentViewController: UIKit.UIViewController)
+  public init(player: AVFoundation.AVPlayer, hostname: Swift.String, delegate: any Shift72RocketSDK.RocketPlayerDelegate)
+  @objc deinit
+  public func play(slug: Swift.String, token: Swift.String, completion: @escaping (Swift.Optional<Shift72RocketSDK.RocketPlayerError>) -> Swift.Void)
+}
+public enum WatchWindowResponse {
+  case StartWatchWindow
+  case Cancel
+  public static func == (a: Shift72RocketSDK.WatchWindowResponse, b: Shift72RocketSDK.WatchWindowResponse) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PlaybackProgressResponse {
+  case Resume
+  case StartFromBeginning
+  case Cancel
+  public static func == (a: Shift72RocketSDK.PlaybackProgressResponse, b: Shift72RocketSDK.PlaybackProgressResponse) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol RocketPlayerDelegate {
+  func onWatchWindow(timeToWatch: Swift.Int, response: @escaping (Shift72RocketSDK.WatchWindowResponse) -> Swift.Void)
+  func onFoundPlaybackProgress(position: Swift.Int, length: Swift.Int, response: @escaping (Shift72RocketSDK.PlaybackProgressResponse) -> Swift.Void)
+  func onTooManyDevicesPlaybackAborted()
+  func onTooManyConcurrentStreamsPlaybackAborted()
+  func onPlaybackStarted()
+  func onPlaybackCompleted()
+  func onErrorPlaybackAborted()
+  func onAuthorizationErrorPlaybackAborted()
+  func videoSizeChanged(width: Swift.Double, height: Swift.Double)
+}
+extension Shift72RocketSDK.RocketPlayerErrorType : Swift.Equatable {}
+extension Shift72RocketSDK.RocketPlayerErrorType : Swift.Hashable {}
+extension Shift72RocketSDK.RocketPlayerErrorType : Swift.RawRepresentable {}
+extension Shift72RocketSDK.RocketPlayerLoggerArea : Swift.Equatable {}
+extension Shift72RocketSDK.RocketPlayerLoggerArea : Swift.Hashable {}
+extension Shift72RocketSDK.WatchWindowResponse : Swift.Equatable {}
+extension Shift72RocketSDK.WatchWindowResponse : Swift.Hashable {}
+extension Shift72RocketSDK.PlaybackProgressResponse : Swift.Equatable {}
+extension Shift72RocketSDK.PlaybackProgressResponse : Swift.Hashable {}

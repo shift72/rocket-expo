@@ -1,8 +1,12 @@
 import { useEvent } from 'expo';
 import RocketExpo, { RocketExpoView } from 'rocket-expo';
 import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { useEffect } from 'react';
 
 export default function App() {
+  useEffect(() => {
+    RocketExpo.setupLogger();
+  },[]);
   const onChangePayload = useEvent(RocketExpo, 'onChange');
 
   return (
