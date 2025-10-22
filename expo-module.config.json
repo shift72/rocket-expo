@@ -4,6 +4,12 @@
     "modules": ["RocketExpoModule"]
   },
   "android": {
-    "modules": ["com.shift72.rocketexpo.RocketExpoModule"]
+    "modules": ["com.shift72.rocketexpo.RocketExpoModule"],
+    "gradleAarProjects": [
+      {
+        "name": "rocket-sdk",
+        "aarFilePath": "android/libs/rocketsdk-0.1.0.aar"
+      }
+    ]
   }
 }

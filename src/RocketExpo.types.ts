@@ -13,7 +13,7 @@ export type ChangeEventPayload = {
 };
 
 export type RocketExpoViewProps = {
-  url: string;
+  playback_config: Record<string, string>;
   onLoad: (event: { nativeEvent: OnLoadEventPayload }) => void;
   style?: StyleProp<ViewStyle>;
 };

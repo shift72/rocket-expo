@@ -2,7 +2,10 @@ package com.shift72.rocketexpo
 
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
-import java.net.URL
+import expo.modules.kotlin.records.Record
+import expo.modules.kotlin.records.Field
+
+import android.util.Log;
 
 class RocketExpoModule : Module() {
   // Each module class must implement the definition function. The definition consists of components
@@ -27,6 +30,10 @@ class RocketExpoModule : Module() {
       "Hello world! 👋"
     }
 
+    Function("setupLogger") {
+      
+    }
+
     // Defines a JavaScript function that always returns a Promise and whose native code
     // is by default dispatched on the different thread than the JavaScript runtime runs on.
     AsyncFunction("setValueAsync") { value: String ->
@@ -36,15 +43,25 @@ class RocketExpoModule : Module() {
       ))
     }
 
+
     // Enables the module to be used as a native view. Definition components that are accepted as part of
     // the view definition: Prop, Events.
     View(RocketExpoView::class) {
       // Defines a setter for the `url` prop.
-      Prop("url") { view: RocketExpoView, url: URL ->
-        view.webView.loadUrl(url.toString())
+      Prop("playback_config") { view: RocketExpoView, config: PlaybackConfig ->
+        if (!config.slug.isEmpty() && !config.token.isEmpty()) {
+          view.player.play(config.slug, config.token);
+        }
+
       }
       // Defines an event that the view can send to JavaScript.
       Events("onLoad")
     }
   }
+
+  data class PlaybackConfig(
+    @Field val slug: String = "",
+    @Field val token: String = ""
+  ) : Record
+
 }

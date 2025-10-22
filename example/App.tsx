@@ -32,7 +32,7 @@ export default function App() {
         </Group>
         <Group name="Views">
           <RocketExpoView
-            url="https://www.example.com"
+            playback_config={{"slug": "", "token": ""}}
             onLoad={({ nativeEvent: { url } }) => console.log(`Loaded: ${url}`)}
             style={styles.view}
           />
@@ -72,6 +72,6 @@ const styles = {
   },
   view: {
     flex: 1,
-    height: 200,
+    height: 400,
   },
 };

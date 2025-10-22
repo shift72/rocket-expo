@@ -50,4 +50,15 @@ public class RocketExpoModule: Module {
       Events("onLoad")
     }
   }
+
+  struct FileReadOptions: Record { // use this for the PlaybackConfig
+    @Field
+    var encoding: String = "utf8"
+
+    @Field
+    var position: Int = 0
+
+    @Field
+    var length: Int?
+  }
 }

@@ -37,7 +37,9 @@
             "useFrameworks": "dynamic"
           }
         }
-      ]
+
+      ],
+      "../plugins/addDesugaringForRocket.js"
     ]
   }
 }
