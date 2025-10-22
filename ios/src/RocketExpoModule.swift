@@ -40,25 +40,30 @@ public class RocketExpoModule: Module {
     // Enables the module to be used as a native view. Definition components that are accepted as part of the
     // view definition: Prop, Events.
     View(RocketExpoView.self) {
-      // Defines a setter for the `url` prop.
-//      Prop("url") { (view: RocketExpoView, url: URL) in
-//        if view.webView.url != url {
-//          view.webView.load(URLRequest(url: url))
-//        }
-//      }
+      Prop("playback_config") { (view: RocketExpoView, config: PlaybackConfig) in
+        if (!config.slug.isEmpty && !config.token.isEmpty) {
+          view.player!.play(slug: config.slug, token: config.token) { maybeError in
+            switch maybeError {
+              case .none:
+                print("started")
+                break
+              case let .some(error):
+                print("error", error.type, error.message)
+                break
+            }
+          }
+        }
+      }
 
       Events("onLoad")
     }
   }
 
-  struct FileReadOptions: Record { // use this for the PlaybackConfig
+  struct PlaybackConfig: Record {
     @Field
-    var encoding: String = "utf8"
-
+    var slug: String = ""
+    
     @Field
-    var position: Int = 0
-
-    @Field
-    var length: Int?
+    var token: String = ""
   }
 }
