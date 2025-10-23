@@ -31,7 +31,7 @@ class RocketExpoModule : Module() {
     }
 
     Function("setupHostname") { hostname: String ->
-      // RocketExpoView.hostname = hostname
+       RocketExpoView.hostname = hostname
     }
 
     Function("setupLogger") {

@@ -26,24 +26,35 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
   // The name of the event is inferred from the value and needs to match the event name defined in the module.
   private val onPlaybackCompleted by EventDispatcher()
 
+  companion object {
+    var hostname = "" // Static variable
+  }
+
   fun onRocketComplete() {
     android.util.Log.d("TAG", "onRocketComplete: its done")
     onPlaybackCompleted(emptyMap())
   }
 
-  internal var playerView: RocketSurface = RocketSurface(context).apply {
+  internal val playerView: RocketSurface = RocketSurface(context).apply {
     layoutParams = FrameLayout.LayoutParams(
         FrameLayout.LayoutParams.MATCH_PARENT,
         FrameLayout.LayoutParams.MATCH_PARENT
     )  }
 
-  internal val player: RocketPlayer = RocketPlayerLaunchpadBase
-    .MakeRocketPlayerLaunchpad(context, playerView)
-    .setBaseUrl("")
-    .setRocketOnCompleteCallback(this::onRocketComplete)
-    .build()
+  internal val player: RocketPlayer
 
   init {
+    if (hostname.isEmpty()){
+      appContext.jsLogger?.fatal("you must set a hostname")
+    }
+    assert(!hostname.isEmpty()) {"you must set a hostname"}
+
+    player = RocketPlayerLaunchpadBase
+      .MakeRocketPlayerLaunchpad(context, playerView)
+      .setBaseUrl(hostname)
+      .setRocketOnCompleteCallback(this::onRocketComplete)
+      .build()
     playerView.showController();
-    addView(playerView)  }
+    addView(playerView)
+  }
 }
