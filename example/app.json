@@ -39,7 +39,7 @@
         }
 
       ],
-      "withDesugaringForRocket"
+      "../plugins/withDesugaringForRocket.js"
     ]
   }
 }
