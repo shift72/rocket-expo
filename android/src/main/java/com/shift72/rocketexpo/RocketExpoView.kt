@@ -28,7 +28,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
 
   fun onRocketComplete() {
     android.util.Log.d("TAG", "onRocketComplete: its done")
-    onPlaybackCompleted(mapOf("no" to "no"))
+    onPlaybackCompleted(emptyMap())
   }
 
   internal var playerView: RocketSurface = RocketSurface(context).apply {
