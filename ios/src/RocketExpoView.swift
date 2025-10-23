@@ -18,7 +18,7 @@ class RocketExpoView: ExpoView {
       }
     }
     
-    let hostname = "apptvod.shift72.com"
+    static var hostname = ""
 
     required init(appContext: AppContext? = nil) {
         super.init(appContext: appContext)
@@ -30,8 +30,8 @@ class RocketExpoView: ExpoView {
         let delegate = ExpoRocketPlayerDelegate(parentViewController: playerViewController, onComplete: {
             self.onPlaybackCompleted([:])
         })
-        
-        self.player = RocketPlayer.init(player: self.playerView, hostname: self.hostname, delegate: delegate)
+        assert(!RocketExpoView.hostname.isEmpty, "hostname must be set before initialising RocketExpoView")
+        self.player = RocketPlayer.init(player: self.playerView, hostname: RocketExpoView.hostname, delegate: delegate)
     }
     
 //    public override func safeAreaInsetsDidChange() {

@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 
 export default function App() {
   useEffect(() => {
+    RocketExpo.setupHostname("apptvod.shift72.com");
     RocketExpo.setupLogger();
   },[]);
   const onChangePayload = useEvent(RocketExpo, 'onChange');

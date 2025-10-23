@@ -32,6 +32,10 @@ public class RocketExpoModule: Module {
         "value": value
       ])
     }
+      
+    Function("setupHostname") { (hostname: String) in
+        RocketExpoView.hostname = hostname
+    }
 
     Function("setupLogger") {
       Shift72RocketSDK.Logger.setDelegate(ExampleLoggerDelegate())

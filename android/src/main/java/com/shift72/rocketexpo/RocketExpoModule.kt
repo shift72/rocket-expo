@@ -30,6 +30,10 @@ class RocketExpoModule : Module() {
       "Hello world! 👋"
     }
 
+    Function("setupHostname") { hostname: String ->
+      // RocketExpoView.hostname = hostname
+    }
+
     Function("setupLogger") {
 
     }
