@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 extension String {
     func leftPadding(toLength: Int, withPad character: Character) -> String {
         let stringLength = self.count

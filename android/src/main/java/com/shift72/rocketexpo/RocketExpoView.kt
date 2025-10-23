@@ -5,29 +5,29 @@ import expo.modules.kotlin.AppContext
 import expo.modules.kotlin.viewevent.EventDispatcher
 import expo.modules.kotlin.views.ExpoView
 
-import com.shift72.mobile.rocketsdk.player.PlaybackCallback;
-import com.shift72.mobile.rocketsdk.player.RocketPlayer;
-import com.shift72.mobile.rocketsdk.player.RocketPlayerListener;
-import com.shift72.mobile.rocketsdk.player.RocketSurface;
-import com.shift72.mobile.rocketsdk.launchpad.RocketPlayerLaunchpadBase;
+import com.shift72.mobile.rocketsdk.player.PlaybackCallback
+import com.shift72.mobile.rocketsdk.player.RocketPlayer
+import com.shift72.mobile.rocketsdk.player.RocketPlayerListener
+import com.shift72.mobile.rocketsdk.player.RocketSurface
+import com.shift72.mobile.rocketsdk.RocketPlayerLogger
+import com.shift72.mobile.rocketsdk.launchpad.RocketPlayerLaunchpadBase
 
-import com.google.android.exoplayer2.ui.StyledPlayerView;
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import android.os.Looper;
+import com.google.android.exoplayer2.ui.StyledPlayerView
+import com.google.android.exoplayer2.SimpleExoPlayer
+import android.os.Looper
 
 import android.view.MotionEvent
-import android.widget.FrameLayout;
+import android.widget.FrameLayout
 
-import android.os.Handler;
+import android.os.Handler
 import java.lang.Runnable
 
 class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(context, appContext) {
-  // Creates and initializes an event dispatcher for the `onLoad` event.
-  // The name of the event is inferred from the value and needs to match the event name defined in the module.
   private val onPlaybackCompleted by EventDispatcher()
 
-  companion object {
-    var hostname = "" // Static variable
+  companion object { // Static variables
+    var hostname = ""
+    var playerLogger: RocketPlayerListener = RocketPlayerLogger()
   }
 
   fun onRocketComplete() {
@@ -52,6 +52,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
     player = RocketPlayerLaunchpadBase
       .MakeRocketPlayerLaunchpad(context, playerView)
       .setBaseUrl(hostname)
+      .setRocketPlayerListener(playerLogger)
       .setRocketOnCompleteCallback(this::onRocketComplete)
       .build()
     playerView.showController();
