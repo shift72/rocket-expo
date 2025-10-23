@@ -14,6 +14,7 @@ export type ChangeEventPayload = {
 
 export type RocketExpoViewProps = {
   playback_config: Record<string, string>;
-  onLoad: (event: { nativeEvent: OnLoadEventPayload }) => void;
+//  onLoad: (event: { nativeEvent: OnLoadEventPayload }) => void;
+  onPlaybackCompleted: () => void;
   style?: StyleProp<ViewStyle>;
 };

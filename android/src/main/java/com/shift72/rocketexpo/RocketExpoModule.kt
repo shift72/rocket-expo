@@ -31,7 +31,7 @@ class RocketExpoModule : Module() {
     }
 
     Function("setupLogger") {
-      
+
     }
 
     // Defines a JavaScript function that always returns a Promise and whose native code
@@ -55,7 +55,7 @@ class RocketExpoModule : Module() {
 
       }
       // Defines an event that the view can send to JavaScript.
-      Events("onLoad")
+      Events("onPlaybackCompleted")
     }
   }
 

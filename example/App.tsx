@@ -33,7 +33,7 @@ export default function App() {
         <Group name="Views">
           <RocketExpoView
             playback_config={{"slug": "", "token": ""}}
-            onLoad={({ nativeEvent: { url } }) => console.log(`Loaded: ${url}`)}
+            onPlaybackCompleted={() => console.log("onPlaybackCompleted boi")}
             style={styles.view}
           />
         </Group>

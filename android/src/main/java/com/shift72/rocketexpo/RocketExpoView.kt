@@ -24,10 +24,11 @@ import java.lang.Runnable
 class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(context, appContext) {
   // Creates and initializes an event dispatcher for the `onLoad` event.
   // The name of the event is inferred from the value and needs to match the event name defined in the module.
-  private val onLoad by EventDispatcher()
+  private val onPlaybackCompleted by EventDispatcher()
 
   fun onRocketComplete() {
     android.util.Log.d("TAG", "onRocketComplete: its done")
+    onPlaybackCompleted(mapOf("no" to "no"))
   }
 
   internal var playerView: RocketSurface = RocketSurface(context).apply {
