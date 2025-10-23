@@ -55,7 +55,7 @@ public class RocketExpoModule: Module {
         }
       }
 
-      Events("onLoad")
+      Events("onPlaybackCompleted")
     }
   }
 
