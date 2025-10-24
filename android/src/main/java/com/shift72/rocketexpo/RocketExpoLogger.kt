@@ -10,7 +10,11 @@ import com.shift72.mobile.rocketsdk.player.RocketPlayerListener
 
 public class RocketExpoLogger (val appContext: AppContext, val prefix: String? = null) : RocketPlayerListener {
     override fun onFatalError(error: RocketSdkError) {
-        appContext.jsLogger?.error("${prefix}: ${error.rocketErrorCode} - onFatalError: ${error.message}")
+        if (error.cause != null){
+            appContext.jsLogger?.error("${prefix}: ${error.rocketErrorCode} - onFatalError: ${error.message}; inner: ${error.cause?.message}")
+        } else {
+            appContext.jsLogger?.error("${prefix}: ${error.rocketErrorCode} - onFatalError: ${error.message}; no inner")
+        }
     }
 
     override fun onPlaybackError(error: RocketPlayErrorBase) {
