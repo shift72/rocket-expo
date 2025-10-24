@@ -1,7 +1,7 @@
 import { NativeModule, requireNativeModule } from 'expo';
 
 declare class RocketExpoModule extends NativeModule {
-  setupHostname(): void;
+  setupHostname(hostname: string): void;
   setupLogger(): void;
 }
 
