@@ -41,13 +41,27 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
         FrameLayout.LayoutParams.MATCH_PARENT
     )  }
 
-  internal val player: RocketPlayer
+  internal var player: RocketPlayer
 
   override fun onDetachedFromWindow() {
     super.onDetachedFromWindow()
+    android.util.Log.d("TAG", "onDetachedFromWindow: we detatched")
     // Perform cleanup tasks here, like stopping animations,
     // unregistering listeners, or canceling background threads/coroutines.
     player?.destroy()
+    player = null;
+  }
+
+  override fun onAttachedToWindow() {
+    super.onAttachedToWindow()
+    if (player == null) {
+      player = RocketPlayerLaunchpadBase
+        .MakeRocketPlayerLaunchpad(context, playerView)
+        .setBaseUrl(hostname)
+        .setRocketPlayerListener(playerLogger)
+        .setRocketOnCompleteCallback(this::onRocketComplete)
+        .build()
+    }
   }
 
   init {

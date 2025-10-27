@@ -27,7 +27,7 @@ class RocketExpoModule : Module() {
       // Defines a setter for the `url` prop.
       Prop("playbackConfig") { view: RocketExpoView, config: PlaybackConfig ->
         if (!config.slug.isEmpty() && !config.token.isEmpty()) {
-          view.player.play(config.slug, config.token);
+          view.player?.play(config.slug, config.token);
         }
 
       }
