@@ -43,6 +43,13 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
 
   internal val player: RocketPlayer
 
+  override fun onDetachedFromWindow() {
+    super.onDetachedFromWindow()
+    // Perform cleanup tasks here, like stopping animations,
+    // unregistering listeners, or canceling background threads/coroutines.
+    player?.destroy()
+  }
+
   init {
     if (hostname.isEmpty()){
       appContext.jsLogger?.fatal("you must set a hostname")
