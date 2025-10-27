@@ -41,7 +41,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
         FrameLayout.LayoutParams.MATCH_PARENT
     )  }
 
-  internal var player: RocketPlayer
+  internal var player: RocketPlayer?
 
   override fun onDetachedFromWindow() {
     super.onDetachedFromWindow()
