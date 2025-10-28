@@ -19,7 +19,8 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'
-  s.vendored_frameworks = 'Frameworks/Shift72RocketSDK.xcframework', 'Frameworks/GoogleCast.xcframework'
+  s.ios.vendored_frameworks = 'Frameworks/Shift72RocketSDK.xcframework', 'Frameworks/GoogleCast.xcframework'
+  s.tvos.vendored_frameworks = 'Frameworks/Shift72RocketSDK-TV.xcframework'
 
   # Swift/Objective-C compatibility
   s.pod_target_xcconfig = {
