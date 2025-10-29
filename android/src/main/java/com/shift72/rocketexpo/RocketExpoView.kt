@@ -16,6 +16,8 @@ import com.google.android.exoplayer2.ui.StyledPlayerView
 import com.google.android.exoplayer2.SimpleExoPlayer
 import android.os.Looper
 
+import com.shift72.rocketexpo.RocketExpoModule.PlaybackConfig;
+
 import android.view.MotionEvent
 import android.widget.FrameLayout
 
@@ -41,7 +43,9 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
         FrameLayout.LayoutParams.MATCH_PARENT
     )  }
 
-  internal var player: RocketPlayer?
+  internal var player: RocketPlayer? = null
+
+  internal var config: PlaybackConfig? = null
 
   override fun onDetachedFromWindow() {
     super.onDetachedFromWindow()
@@ -49,22 +53,12 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
     // Perform cleanup tasks here, like stopping animations,
     // unregistering listeners, or canceling background threads/coroutines.
     player?.destroy()
-    player = null;
+    removeView(playerView)
   }
 
   override fun onAttachedToWindow() {
     super.onAttachedToWindow()
-    if (player == null) {
-      player = RocketPlayerLaunchpadBase
-        .MakeRocketPlayerLaunchpad(context, playerView)
-        .setBaseUrl(hostname)
-        .setRocketPlayerListener(playerLogger)
-        .setRocketOnCompleteCallback(this::onRocketComplete)
-        .build()
-    }
-  }
 
-  init {
     if (hostname.isEmpty()){
       appContext.jsLogger?.fatal("you must set a hostname")
     }
@@ -78,5 +72,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
       .build()
     playerView.showController();
     addView(playerView)
+    player?.play(config?.slug, config?.token);
   }
+
 }

@@ -10,7 +10,10 @@ import android.util.Log
 import com.shift72.rocketexpo.RocketExpoLogger
 
 class RocketExpoModule : Module() {
+
+
   override fun definition() = ModuleDefinition {
+
     Name("RocketExpo")
 
     Function("setupHostname") { hostname: String ->
@@ -21,15 +24,18 @@ class RocketExpoModule : Module() {
       RocketExpoView.playerLogger = RocketExpoLogger(appContext, "RocketPlayer")
     }
 
+    OnActivityDestroys() {
+      android.util.Log.d("TAG", "OnActivityDestroys")
+    }
+
     // Enables the module to be used as a native view. Definition components that are accepted as part of
     // the view definition: Prop, Events.
     View(RocketExpoView::class) {
       // Defines a setter for the `url` prop.
       Prop("playbackConfig") { view: RocketExpoView, config: PlaybackConfig ->
         if (!config.slug.isEmpty() && !config.token.isEmpty()) {
-          view.player?.play(config.slug, config.token);
+          view.config = config;
         }
-
       }
       // Defines an event that the view can send to JavaScript.
       Events("onPlaybackCompleted")
