@@ -1,0 +1,6 @@
+framework module Shift72RocketSDK {
+  umbrella header "Shift72RocketSDK.h"
+  export *
+
+  module * { export * }
+}
