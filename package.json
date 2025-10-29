@@ -31,15 +31,15 @@
   "license": "MIT",
   "homepage": "https://github.com/shift72/rocket-expo#readme",
   "dependencies": {
-    "expo": "~54.0.13",
-    "react": "19.1.0",
-    "react-native": "0.81.4"
+    "expo": "^52.0.38",
+    "react": "^18.3.1",
+    "react-native": "^0.76.6"
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
     "expo-module-scripts": "^5.0.7",
-    "expo": "^54.0.12",
-    "react-native": "0.81.4"
+    "expo": "^52.0.38",
+    "react-native": "^0.76.6"
   },
   "peerDependencies": {
     "expo": "*",
@@ -47,3 +47,4 @@
     "react-native": "*"
   }
 }
+
