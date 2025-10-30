@@ -2,7 +2,7 @@ import { NativeModule, requireNativeModule } from 'expo';
 
 declare class RocketExpoModule extends NativeModule {
   setupHostname(hostname: string): void;
-  setupLogger(): void;
+  setupLogger(prefix: string): void;
 }
 
 // This call loads the native module object from the JSI.

@@ -11,21 +11,21 @@ import com.shift72.mobile.rocketsdk.player.RocketPlayerListener
 public class RocketExpoLogger (val appContext: AppContext, val prefix: String? = null) : RocketPlayerListener {
     override fun onFatalError(error: RocketSdkError) {
         if (error.cause != null){
-            appContext.jsLogger?.error("${prefix}: ${error.rocketErrorCode} - onFatalError: ${error.message}; inner: ${error.cause?.message}")
+            appContext.errorManager?.reportWarningToLogBox("${prefix}: ${error.rocketErrorCode} - onFatalError: ${error.message}; inner: ${error.cause?.message}")
         } else {
-            appContext.jsLogger?.error("${prefix}: ${error.rocketErrorCode} - onFatalError: ${error.message}; no inner")
+            appContext.errorManager?.reportWarningToLogBox("${prefix}: ${error.rocketErrorCode} - onFatalError: ${error.message}; no inner")
         }
     }
 
     override fun onPlaybackError(error: RocketPlayErrorBase) {
         if (error.hasThrowable()){
-            appContext.jsLogger?.warn("${prefix}: ${error.rocketErrorCode} - onPlaybackError: ${error.throwable.message}")
+            appContext.errorManager?.reportWarningToLogBox("${prefix}: ${error.rocketErrorCode} - onPlaybackError: ${error.throwable.message}")
         } else {
-            appContext.jsLogger?.warn("${prefix}: ${error.rocketErrorCode} - onPlaybackError: no extra information")
+            appContext.errorManager?.reportWarningToLogBox("${prefix}: ${error.rocketErrorCode} - onPlaybackError: no extra information")
         }
     }
 
     override fun onPlayerEvent(message: String, bundle: Bundle): Unit {
-        appContext.jsLogger?.info("${prefix}: PlayerEvent ${message} - ${bundle.toString()}")
+        appContext.errorManager?.reportWarningToLogBox("${prefix}: PlayerEvent ${message} - ${bundle.toString()}")
     }
 }

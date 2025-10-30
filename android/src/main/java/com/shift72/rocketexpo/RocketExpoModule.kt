@@ -20,8 +20,8 @@ class RocketExpoModule : Module() {
       RocketExpoView.hostname = hostname
     }
 
-    Function("setupLogger") {
-      RocketExpoView.playerLogger = RocketExpoLogger(appContext, "RocketPlayer")
+    Function("setupLogger") { prefix: String ->
+      RocketExpoView.playerLogger = RocketExpoLogger(appContext, prefix)
     }
 
     OnActivityDestroys() {

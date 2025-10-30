@@ -60,7 +60,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
     super.onAttachedToWindow()
 
     if (hostname.isEmpty()){
-      appContext.jsLogger?.fatal("you must set a hostname")
+      appContext.errorManager?.reportWarningToLogBox("you must set a hostname")
     }
     assert(!hostname.isEmpty()) {"you must set a hostname"}
 

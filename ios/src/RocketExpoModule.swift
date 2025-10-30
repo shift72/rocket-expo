@@ -9,9 +9,9 @@ public class RocketExpoModule: Module {
         RocketExpoView.hostname = hostname
     }
 
-    Function("setupLogger") {
+    Function("setupLogger") { (prefix: String) in
         if let appContext {
-            Shift72RocketSDK.Logger.setDelegate(RocketExpoLoggerDelegate(appContext: appContext, prefix: "RocketPlayer"))
+            Shift72RocketSDK.Logger.setDelegate(RocketExpoLoggerDelegate(appContext: appContext, prefix: prefix))
         } else {
             print("Couldn't set up RocketSDK Logger, appContext nil")
         }
@@ -40,7 +40,7 @@ public class RocketExpoModule: Module {
   struct PlaybackConfig: Record {
     @Field
     var slug: String = ""
-    
+
     @Field
     var token: String = ""
   }

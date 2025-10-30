@@ -1,6 +1,6 @@
 {
   "name": "rocket-expo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A react native wrapper for Shift72's RocketSDK",
   "main": "build/index.js",
   "types": "build/index.d.ts",

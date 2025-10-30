@@ -27,7 +27,7 @@ import RocketExpo from 'rocket-expo';
 
 useEffect(() => {
   RocketExpo.setupHostname(hostname);
-  RocketExpo.setupLogger();
+  RocketExpo.setupLogger("My_Logger_Prefix");
 },[]);
 ```
 

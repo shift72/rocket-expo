@@ -10,7 +10,7 @@ const token = ""
 export default function App() {
   useEffect(() => {
     RocketExpo.setupHostname(hostname);
-    RocketExpo.setupLogger();
+    RocketExpo.setupLogger("RocketExpo");
   },[]);
 
   return (
