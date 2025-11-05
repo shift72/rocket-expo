@@ -1,6 +1,6 @@
 import { useEvent } from 'expo';
 import RocketExpo, { RocketExpoView } from 'rocket-expo';
-import { SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View, Button } from 'react-native';
 import { useEffect } from 'react';
 
 const hostname = ""
