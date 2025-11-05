@@ -1,11 +1,16 @@
 package com.shift72.rocketexpo
 
+import android.content.Context
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
 import expo.modules.kotlin.records.Record
 import expo.modules.kotlin.records.Field
+import expo.modules.kotlin.exception.Exceptions
 
 import android.util.Log
+import com.shift72.rocketexpo.ScreenActivity
+
+import android.content.Intent
 
 import com.shift72.rocketexpo.RocketExpoLogger
 
@@ -18,6 +23,16 @@ class RocketExpoModule : Module() {
 
     Function("setupHostname") { hostname: String ->
       RocketExpoView.hostname = hostname
+    }
+
+    Function("openPlayerFullscreen") { config: PlaybackConfig ->
+      val context: Context = appContext.currentActivity ?: throw Exceptions.ReactContextLost()
+      android.util.Log.d("TAG", "openPlayerFullscreen: ")
+      val myIntent = Intent(context, ScreenActivity::class.java).apply {
+        putExtra("slug", config.slug)
+        putExtra("token", config.token)
+      }
+      context.startActivity(myIntent)
     }
 
     Function("setupLogger") { prefix: String ->

@@ -17,11 +17,13 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
         <Text style={styles.header}>Expo Rocket SDK Example</Text>
-        <RocketExpoView
-          playbackConfig={{slug: slug, token: token}}
-          onPlaybackCompleted={() => console.log("onPlaybackCompleted boi")}
-          style={styles.view}
-        />
+        {/*<RocketExpoView*/}
+        {/*  playbackConfig={{slug: slug, token: token}}*/}
+        {/*  onPlaybackCompleted={() => console.log("onPlaybackCompleted boi")}*/}
+        {/*  style={styles.view}*/}
+        {/*/>*/}
+        <Button title="Learn More" onPress={ () => {RocketExpo.openPlayerFullscreen({slug, token})} }>
+        </Button>
       </ScrollView>
     </SafeAreaView>
   );

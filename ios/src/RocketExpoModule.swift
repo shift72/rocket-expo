@@ -17,6 +17,10 @@ public class RocketExpoModule: Module {
         }
     }
 
+    Function("openPlayerFullscreen") { (config: PlabackConfig) in
+
+    }
+
     View(RocketExpoView.self) {
       Prop("playbackConfig") { (view: RocketExpoView, config: PlaybackConfig) in
         if (!config.slug.isEmpty && !config.token.isEmpty) {

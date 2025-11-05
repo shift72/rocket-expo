@@ -28,4 +28,8 @@ public class RocketExpoLogger (val appContext: AppContext, val prefix: String? =
     override fun onPlayerEvent(message: String, bundle: Bundle): Unit {
         appContext.errorManager?.reportWarningToLogBox("${prefix}: PlayerEvent ${message} - ${bundle.toString()}")
     }
+
+    override fun onBandwidthEvent(message: String, bundle: Bundle): Unit {
+        //do nothing to chatty
+    }
 }
