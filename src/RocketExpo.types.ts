@@ -1,7 +1,12 @@
 import type { StyleProp, ViewStyle } from 'react-native';
 
+export type PlaybackConfig = {
+  slug: string,
+  token: string
+}
+
 export type RocketExpoViewProps = {
-  playbackConfig: Record<string, string>;
+  playbackConfig: PlaybackConfig;
   onPlaybackCompleted: () => void;
   style?: StyleProp<ViewStyle>;
-};
+}
