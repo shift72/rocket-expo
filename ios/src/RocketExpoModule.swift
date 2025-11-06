@@ -17,8 +17,12 @@ public class RocketExpoModule: Module {
         }
     }
 
-    Function("openPlayerFullscreen") { (config: PlabackConfig) in
-
+    Function("openPlayerFullscreen") { (config: PlaybackConfig) in
+        DispatchQueue.main.async {
+            let player = RocketExpoPlayerViewController.init(hostname: RocketExpoView.hostname, slug: config.slug, token: config.token)
+            player.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            UIApplication.shared.delegate?.window??.rootViewController?.present(player, animated: true)
+        }
     }
 
     View(RocketExpoView.self) {
