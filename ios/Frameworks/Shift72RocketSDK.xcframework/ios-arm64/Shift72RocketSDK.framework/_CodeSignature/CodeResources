@@ -10,31 +10,35 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iFX02RkosLDj4+z6yoR06rYtuQo=
+		m9HDrMTryvHEDXMU063eVBMjtvQ=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		FVMpRhJer3RqwoaxRC30D5ZbLas=
+		5rFBoVp/q2SYl86ipX8ljqYCn4Q=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		MzxMxg3Jh/ePwscJWcZYWXw01Bk=
+		DYw/hkXrShJMn3PgQZ1Ukocz124=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		OFH/g36Jd+q82TWJjTU04k13NY8=
+		kKR4gHGQC5iWlzfgHhR/vf+a8cA=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		MzxMxg3Jh/ePwscJWcZYWXw01Bk=
+		DYw/hkXrShJMn3PgQZ1Ukocz124=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		MmP7xwkK3u/fhqVdTKL7Tn4PUDU=
+		hHbEaC9g8sjyIsMHHdfWBy8Y0yo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		E14SYkyYxKqqEeWX2eWnpz9fg0k=
+		</data>
+		<key>writeMetadata.sh</key>
+		<data>
+		D7b4rq/qeoN8NjLLB3S10u+NF1E=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -50,35 +54,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VOQ1nywvTk7am7CGodrqZMAcaK0HkE2i0PnxjkoZyhk=
+			FvbWniV4MV3RPMf7/tJJn6KxPl0UO56UaOxuihz/z0s=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8n/0VP9Q6FE55EVkRzkaXUOD38ca5kQrsH5UnCgLQV4=
+			nHVMZKv1e/wycDHVNtc1CUh3TiivZ0sj9PrXukeO5+0=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DjY1xyvbIfVBrYRvY1IHsdXBuAp8ifvuV7Y/F8uHlh4=
+			O7+jFaDcEG1fDl8zzjhz5L5mGuf5n9AcfQn+Hf4tiLQ=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8n/0VP9Q6FE55EVkRzkaXUOD38ca5kQrsH5UnCgLQV4=
+			nHVMZKv1e/wycDHVNtc1CUh3TiivZ0sj9PrXukeO5+0=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JwzTrurN5UgZBEkgaduESvHZ9whPXAIYTc7GTYij+0g=
+			rGlAKJttIfzLm3p4FQVh4AcUye1EQrDAKCAeR5jfL/M=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -86,6 +90,13 @@
 			<key>hash2</key>
 			<data>
 			rS+LzyC1+xU2wNscIZhVexppZ8FFQlGmOXdCnuTyu1M=
+			</data>
+		</dict>
+		<key>writeMetadata.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wDE65mQsPs42O7tU/junNTSeE6INkmQvhVx2JnkEtpQ=
 			</data>
 		</dict>
 	</dict>

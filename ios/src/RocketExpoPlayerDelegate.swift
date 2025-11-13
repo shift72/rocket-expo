@@ -81,6 +81,14 @@ public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
         self.onComplete()
     }
     
+    public func onPlayPauseChanged(newState: PlayPauseState) {
+        // nothing
+    }
+    
+    public func onBufferingStateChanged(newState: BufferingState) {
+        // nothing
+    }
+    
     public func onErrorPlaybackAborted() {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Playback Aborted", message: "Something went wrong", preferredStyle: .alert)
@@ -101,7 +109,11 @@ public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
         }
     }
     
-    public func videoSizeChanged(width: Double, height: Double) {
+    public func onVideoSizeChanged(width: Double, height: Double) {
+        // nothing
+    }
+    
+    public func onProgressUpdate(elapsedSeconds: Double, runtimeSeconds: Double) {
         // nothing
     }
 }

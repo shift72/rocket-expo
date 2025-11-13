@@ -10,51 +10,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		dJEE99Mzot8c7AITSJ3SablhJnU=
+		Wd2og88a5YygVJmo310ARqkaWeA=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		FVMpRhJer3RqwoaxRC30D5ZbLas=
+		5rFBoVp/q2SYl86ipX8ljqYCn4Q=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		jl+j9jhgnS69KcvibZEVPX54PCk=
+		uX9B2Km4cZnBXTjNaFduHvhRWFM=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		lGi9yz8o5thmkY+u40iwMokD4QU=
+		eyx2YdZ/BAQEaHK05WJ7VvBICcQ=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		jl+j9jhgnS69KcvibZEVPX54PCk=
+		uX9B2Km4cZnBXTjNaFduHvhRWFM=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		XiaRp+FknJuZgj/RRbp0d68/WJ0=
+		s4quNPhVwnXOkiv62ZtGwlLksJQ=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		FVMpRhJer3RqwoaxRC30D5ZbLas=
+		5rFBoVp/q2SYl86ipX8ljqYCn4Q=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		BR0xkTL23f3R6Z8X4fGvZZL/bB8=
+		duukwnHClmSaZj0cI0uzkF54KO4=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		d8+dI7VRBFqkJjD6F4O5KQFPj2M=
+		Y9VSWZaQsTxFbCRPPdHyMK8ZcQ8=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		BR0xkTL23f3R6Z8X4fGvZZL/bB8=
+		duukwnHClmSaZj0cI0uzkF54KO4=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		fElOfHQCGjsHRkH0NB1NpVVgU3Y=
+		Ib789Ngy9ivo+gMmm7LL9kP+lgs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		E14SYkyYxKqqEeWX2eWnpz9fg0k=
+		</data>
+		<key>writeMetadata.sh</key>
+		<data>
+		D7b4rq/qeoN8NjLLB3S10u+NF1E=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -70,70 +74,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VOQ1nywvTk7am7CGodrqZMAcaK0HkE2i0PnxjkoZyhk=
+			FvbWniV4MV3RPMf7/tJJn6KxPl0UO56UaOxuihz/z0s=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f8Q3clBePXPm0+g+7gdg2ACB6cew8Ytswnx6QPMsZnw=
+			ed0zhEXukKPNvxoEJxjIjCO0P6oYyF4C9hCgUxcEUOw=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8MIP6fm7hUwaGIGilzDLHg2UxmCipoRqZnMo+OEEF60=
+			DyyswkdGklPQteXu+rCUFKOdr1rylnsOMo34hqo7SJ0=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f8Q3clBePXPm0+g+7gdg2ACB6cew8Ytswnx6QPMsZnw=
+			ed0zhEXukKPNvxoEJxjIjCO0P6oYyF4C9hCgUxcEUOw=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GoWe1u6zOwmSk2RihwLrMTGeu4smIHGZyxvF4+f85sM=
+			JjqPqCfdAH9hVC1gPwyh6w5mpNtNCBIR2v2fOv1/HqA=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VOQ1nywvTk7am7CGodrqZMAcaK0HkE2i0PnxjkoZyhk=
+			FvbWniV4MV3RPMf7/tJJn6KxPl0UO56UaOxuihz/z0s=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b+XEwRsWD77FEV+0twq4TPMXUwQ+BFJJ7rfk3yab3VI=
+			zTtidE93PAIBV9mw6DIBN0htUqVcP7Ly6TTnP/llRSk=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m3Q3uCxPLfTfS0KUqZqTJBgZFSa5UO2R7nV/B8fAO1Y=
+			jvyVS9ISnWY1wxWTVNT11TdOa11ttT68QVednl4uF3w=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b+XEwRsWD77FEV+0twq4TPMXUwQ+BFJJ7rfk3yab3VI=
+			zTtidE93PAIBV9mw6DIBN0htUqVcP7Ly6TTnP/llRSk=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qYQZA2zlNG/GPzfaSIBYhmsTtIpAj25+tVNeyb+CTS4=
+			EwMI90LKBA0vbT2bTUvXvkFvC54YbDvl726G28NDScA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -141,6 +145,13 @@
 			<key>hash2</key>
 			<data>
 			rS+LzyC1+xU2wNscIZhVexppZ8FFQlGmOXdCnuTyu1M=
+			</data>
+		</dict>
+		<key>writeMetadata.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wDE65mQsPs42O7tU/junNTSeE6INkmQvhVx2JnkEtpQ=
 			</data>
 		</dict>
 	</dict>

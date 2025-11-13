@@ -54,6 +54,10 @@ class RocketExpoPlayerViewController: UIViewController {
         self.playerViewController.didMove(toParent: self)
     }
     
+    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return [.landscape]
+    }
+    
     public override func viewDidAppear(_ animated: Bool) {
         self.player = RocketPlayer.init(player: playerView, hostname: self.hostname, parentViewController: self)
         self.player!.play(slug: self.slug, token: self.token) { maybeError in

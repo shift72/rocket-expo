@@ -71,9 +71,12 @@ public class DefaultRocketPlayerDelegate : Shift72RocketSDK.RocketPlayerDelegate
   public func onTooManyConcurrentStreamsPlaybackAborted()
   public func onPlaybackStarted()
   public func onPlaybackCompleted()
+  public func onPlayPauseChanged(newState: Shift72RocketSDK.PlayPauseState)
+  public func onBufferingStateChanged(newState: Shift72RocketSDK.BufferingState)
   public func onErrorPlaybackAborted()
   public func onAuthorizationErrorPlaybackAborted()
-  public func videoSizeChanged(width: Swift.Double, height: Swift.Double)
+  public func onVideoSizeChanged(width: Swift.Double, height: Swift.Double)
+  public func onProgressUpdate(elapsedSeconds: Swift.Double, runtimeSeconds: Swift.Double)
   @objc deinit
 }
 public enum RocketPlayerLoggerArea {
@@ -121,16 +124,40 @@ public enum PlaybackProgressResponse {
     get
   }
 }
+public enum PlayPauseState {
+  case Playing
+  case Paused
+  public static func == (a: Shift72RocketSDK.PlayPauseState, b: Shift72RocketSDK.PlayPauseState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum BufferingState {
+  case Buffering
+  case Buffered
+  public static func == (a: Shift72RocketSDK.BufferingState, b: Shift72RocketSDK.BufferingState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public protocol RocketPlayerDelegate {
   func onWatchWindow(timeToWatch: Swift.Int, response: @escaping (Shift72RocketSDK.WatchWindowResponse) -> Swift.Void)
   func onFoundPlaybackProgress(position: Swift.Int, length: Swift.Int, response: @escaping (Shift72RocketSDK.PlaybackProgressResponse) -> Swift.Void)
-  func onTooManyDevicesPlaybackAborted()
-  func onTooManyConcurrentStreamsPlaybackAborted()
   func onPlaybackStarted()
+  func onPlayPauseChanged(newState: Shift72RocketSDK.PlayPauseState)
+  func onBufferingStateChanged(newState: Shift72RocketSDK.BufferingState)
   func onPlaybackCompleted()
   func onErrorPlaybackAborted()
   func onAuthorizationErrorPlaybackAborted()
-  func videoSizeChanged(width: Swift.Double, height: Swift.Double)
+  func onTooManyDevicesPlaybackAborted()
+  func onTooManyConcurrentStreamsPlaybackAborted()
+  func onVideoSizeChanged(width: Swift.Double, height: Swift.Double)
+  func onProgressUpdate(elapsedSeconds: Swift.Double, runtimeSeconds: Swift.Double)
+}
+public struct Shift72RocketSDKMetadata {
+  public static let packageVersion: Swift.String
 }
 extension Shift72RocketSDK.RocketPlayerErrorType : Swift.Equatable {}
 extension Shift72RocketSDK.RocketPlayerErrorType : Swift.Hashable {}
@@ -141,3 +168,7 @@ extension Shift72RocketSDK.WatchWindowResponse : Swift.Equatable {}
 extension Shift72RocketSDK.WatchWindowResponse : Swift.Hashable {}
 extension Shift72RocketSDK.PlaybackProgressResponse : Swift.Equatable {}
 extension Shift72RocketSDK.PlaybackProgressResponse : Swift.Hashable {}
+extension Shift72RocketSDK.PlayPauseState : Swift.Equatable {}
+extension Shift72RocketSDK.PlayPauseState : Swift.Hashable {}
+extension Shift72RocketSDK.BufferingState : Swift.Equatable {}
+extension Shift72RocketSDK.BufferingState : Swift.Hashable {}
