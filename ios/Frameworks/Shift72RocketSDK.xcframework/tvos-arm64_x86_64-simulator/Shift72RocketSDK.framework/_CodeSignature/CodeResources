@@ -10,11 +10,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		dg0XiiXepIpEcIRwjgIVVnYB5Ak=
+		F8b9ISvlBu0XGS1r2M3R4Blf5+s=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
-		4n1iwiieIXWzI4sfgjDyvdLvy/g=
+		A1/4bz3B7dZ7Ohkznz1irbkiKPY=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		s+Jxiw5B9KFc0CRWvJ8CEWzoip0=
+		Ma6D0taccaIg3bdu+jD6La8WVwo=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
-		4n1iwiieIXWzI4sfgjDyvdLvy/g=
+		A1/4bz3B7dZ7Ohkznz1irbkiKPY=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
@@ -50,15 +50,11 @@
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		anUK7xsSnHTf2p8+Bryh3V64Qe0=
+		tFYxc9LTzC1pmykHKsjZZmYMchc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		E14SYkyYxKqqEeWX2eWnpz9fg0k=
-		</data>
-		<key>writeMetadata.sh</key>
-		<data>
-		D7b4rq/qeoN8NjLLB3S10u+NF1E=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -74,7 +70,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rn+S98RSKBsu7BmK7u/AkzOwYIIKd9krtHlU80VfOfo=
+			P7WX0oBWbz2LR//Teo+RdZ2OD6I8YAbUlkGowUofrB4=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
@@ -102,14 +98,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mk73RZpdaqIqsrN8PN1QmOYr/Wg/2lLye6YcX+ZCeTE=
+			1nfz44jgbsAxjp6y3+WeVlZCkmrO1kgFecPOta25QeQ=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rn+S98RSKBsu7BmK7u/AkzOwYIIKd9krtHlU80VfOfo=
+			P7WX0oBWbz2LR//Teo+RdZ2OD6I8YAbUlkGowUofrB4=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
@@ -137,7 +133,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pCjkHToOhkZg/1Ntjb/MSZUt4AhxE+N2EkOb2ksVAWo=
+			PcErpjvxBWceBnQIhzag9sjZM42l/VGha2kO+RGSFiY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -145,13 +141,6 @@
 			<key>hash2</key>
 			<data>
 			rS+LzyC1+xU2wNscIZhVexppZ8FFQlGmOXdCnuTyu1M=
-			</data>
-		</dict>
-		<key>writeMetadata.sh</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			wDE65mQsPs42O7tU/junNTSeE6INkmQvhVx2JnkEtpQ=
 			</data>
 		</dict>
 	</dict>

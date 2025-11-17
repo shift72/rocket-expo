@@ -10,11 +10,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3YA6zIbdJE6Mb2hARSKRYDhgdrw=
+		Nqk9ikS9SgqB8lvJiM/wCBl1NN0=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.abi.json</key>
 		<data>
-		4n1iwiieIXWzI4sfgjDyvdLvy/g=
+		A1/4bz3B7dZ7Ohkznz1irbkiKPY=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
 		<data>
@@ -30,15 +30,11 @@
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<data>
-		vYavzTE0gm1DLlAZf0Qws9NT/1s=
+		rzs8r5nsjHq13otT74D18Qo9VfI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		E14SYkyYxKqqEeWX2eWnpz9fg0k=
-		</data>
-		<key>writeMetadata.sh</key>
-		<data>
-		D7b4rq/qeoN8NjLLB3S10u+NF1E=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -54,7 +50,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rn+S98RSKBsu7BmK7u/AkzOwYIIKd9krtHlU80VfOfo=
+			P7WX0oBWbz2LR//Teo+RdZ2OD6I8YAbUlkGowUofrB4=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
@@ -82,7 +78,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rVC9EuV1opJCoWRUDX/I7xzTUynDuHLRVvedPkdYBes=
+			PzqKF23el3ILMtlRlZBakkcZj+/jOHjjr1RcCEXikMk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -90,13 +86,6 @@
 			<key>hash2</key>
 			<data>
 			rS+LzyC1+xU2wNscIZhVexppZ8FFQlGmOXdCnuTyu1M=
-			</data>
-		</dict>
-		<key>writeMetadata.sh</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			wDE65mQsPs42O7tU/junNTSeE6INkmQvhVx2JnkEtpQ=
 			</data>
 		</dict>
 	</dict>
