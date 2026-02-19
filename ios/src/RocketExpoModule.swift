@@ -2,24 +2,31 @@ import ExpoModulesCore
 import Shift72RocketSDK
 
 public class RocketExpoModule: Module {
+  static var loggerDelegate: RocketExpoLoggerDelegate {
+    RocketExpoLoggerDelegate()
+  }
+
   public func definition() -> ModuleDefinition {
     Name("RocketExpo")
+
+    Events(RocketExpoEventsDelegate.EventList)
 
     Function("setupHostname") { (hostname: String) in
         RocketExpoView.hostname = hostname
     }
 
-    Function("setupLogger") { (prefix: String) in
-        if let appContext {
-            Shift72RocketSDK.Logger.setDelegate(RocketExpoLoggerDelegate(appContext: appContext, prefix: prefix))
-        } else {
-            print("Couldn't set up RocketSDK Logger, appContext nil")
-        }
+    Function("setupLogger") {
+        Shift72RocketSDK.Logger.setDelegate(RocketExpoModule.loggerDelegate)
     }
 
     Function("openPlayerFullscreen") { (config: PlaybackConfig) in
         DispatchQueue.main.async {
-            let player = RocketExpoPlayerViewController.init(hostname: RocketExpoView.hostname, slug: config.slug, token: config.token)
+            guard let appContext = self.appContext else {
+                RocketExpoModule.loggerDelegate.error(message: "\(String(describing: Self.self)) Failed to open fullscreen player, appContext nil")
+                return
+            }
+            let eventDelegate = RocketExpoEventsDelegate(appContext: appContext)
+            let player = RocketExpoPlayerViewController.init(hostname: RocketExpoView.hostname, slug: config.slug, token: config.token, eventDelegate: eventDelegate)
             player.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
             UIApplication.shared.delegate?.window??.rootViewController?.present(player, animated: true)
         }
@@ -31,17 +38,15 @@ public class RocketExpoModule: Module {
           view.player!.play(slug: config.slug, token: config.token) { maybeError in
             switch maybeError {
               case .none:
-                print("started")
+                RocketExpoModule.loggerDelegate.info(message: "\(String(describing: Self.self)) playback started")
                 break
               case let .some(error):
-                print("error", error.type, error.message)
+                RocketExpoModule.loggerDelegate.error(message: "\(String(describing: Self.self)) error starting playback \(error.type): \(error.message)")
                 break
             }
           }
         }
       }
-
-      Events("onPlaybackCompleted")
     }
   }
 

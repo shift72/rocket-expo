@@ -1,9 +1,9 @@
 import { NativeModule, requireNativeModule } from 'expo';
-import { PlaybackConfig } from './RocketExpo.types';
+import { PlaybackConfig, RocketExpoModuleEvents } from './RocketExpo.types';
 
-declare class RocketExpoModule extends NativeModule {
+declare class RocketExpoModule extends NativeModule<RocketExpoModuleEvents> {
   setupHostname(hostname: string): void;
-  setupLogger(prefix: string): void;
+  setupLogger(): void;
   openPlayerFullscreen(config: PlaybackConfig): void
 }
 

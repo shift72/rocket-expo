@@ -1,6 +1,6 @@
 //
 //  RocketExpoLoggerDelegate.swift
-//  Pods
+//  Shift72RocketSDKExpo
 //
 //  Created by Declan ter Veer-Burke on 23/10/2025.
 //
@@ -9,27 +9,28 @@ import ExpoModulesCore
 import Shift72RocketSDK
 
 class RocketExpoLoggerDelegate : Shift72RocketSDK.LoggerDelegate {
-    private let appContext: AppContext
-    private let prefix: String?
-
-    private var prefixFull: String {
-        if let prefix {"\(prefix)\\"} else {""}
-    }
-
-    init(appContext: AppContext, prefix: String? = nil) {
-        self.appContext = appContext
-        self.prefix = prefix
-    }
-
+    private let osLogger = os.Logger(
+        subsystem: Bundle.main.bundleIdentifier!,
+        category: "Shift72RocketSDKExpo"
+    )
+    
     func info(area: Shift72RocketSDK.RocketPlayerLoggerArea, message: String) {
-        //appContext.jsLogger.info("\(prefixFull)\(String(describing: area)) - \(message)")
+        osLogger.info("\(String(describing: area)) - \(message)")
     }
-
+    
     func debug(area: Shift72RocketSDK.RocketPlayerLoggerArea, message: String) {
-        //appContext.jsLogger.debug("\(prefixFull)\(String(describing: area)) - \(message)")
+        osLogger.debug("\(String(describing: area)) - \(message)")
     }
-
+    
     func error(error: Shift72RocketSDK.RocketPlayerError) {
-        //appContext.jsLogger.error("\(prefixFull)\(String(describing: error.type)) - \(error.message)")
+        osLogger.error("\(String(describing: error.type)) - \(error.message)")
+    }
+    
+    func info(message: String) {
+        osLogger.info("\(message)")
+    }
+    
+    func error(message: String) {
+        osLogger.error("\(message)")
     }
 }

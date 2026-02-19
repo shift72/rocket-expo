@@ -1,5 +1,4 @@
-import { useEvent } from 'expo';
-import RocketExpo, { RocketExpoView } from 'rocket-expo';
+import RocketExpo, { RocketExpoPlaybackAbortError, RocketExpoPlaybackProgress, RocketExpoView } from 'rocket-expo';
 import { SafeAreaView, ScrollView, Text, View, Button } from 'react-native';
 import { useEffect } from 'react';
 
@@ -10,7 +9,16 @@ const token = ""
 export default function App() {
   useEffect(() => {
     RocketExpo.setupHostname(hostname);
-    RocketExpo.setupLogger("RocketExpo");
+    RocketExpo.setupLogger();
+    RocketExpo.addListener('onFullscreenEnter', () => { console.log('onFullscreenEnter') })
+    RocketExpo.addListener('onFullscreenExit', () => { console.log('onFullscreenExit') })
+    RocketExpo.addListener('onPlayerReady', () => { console.log('onPlayerReady') })
+    RocketExpo.addListener('onPlay', () => { console.log('onPlay') })
+    RocketExpo.addListener('onPause', () => { console.log('onPause') })
+    RocketExpo.addListener('onBuffering', () => { console.log('onBuffering') })
+    RocketExpo.addListener('onProgressUpdate', (e: RocketExpoPlaybackProgress) => { console.log('onProgressUpdate ' + JSON.stringify(e)) })
+    RocketExpo.addListener('onErrorPlaybackAborted', (e: RocketExpoPlaybackAbortError) => { console.log('onErrorPlaybackAborted ' + JSON.stringify(e)) })
+    RocketExpo.addListener('onPlaybackCompleted', () => { console.log('onPlaybackCompleted') })
   },[]);
 
   return (
@@ -19,7 +27,6 @@ export default function App() {
         <Text style={styles.header}>Expo Rocket SDK Example</Text>
         {/*<RocketExpoView*/}
         {/*  playbackConfig={{slug: slug, token: token}}*/}
-        {/*  onPlaybackCompleted={() => console.log("onPlaybackCompleted boi")}*/}
         {/*  style={styles.view}*/}
         {/*/>*/}
         <Button title="Learn More" onPress={ () => {RocketExpo.openPlayerFullscreen({slug, token})} }>

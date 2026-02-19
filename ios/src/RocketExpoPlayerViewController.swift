@@ -1,6 +1,6 @@
 //
 //  RocketExpoPlayerViewController.swift
-//  Shift72RocketSDKExample
+//  Shift72RocketSDKExpo
 //
 //  Created by Declan ter Veer-Burke on 06/11/2025.
 //
@@ -16,11 +16,13 @@ class RocketExpoPlayerViewController: UIViewController {
     let hostname: String
     let slug: String
     let token: String
+    let eventDelegate: RocketExpoEventsDelegate
     
-    init(hostname: String, slug: String, token: String) {
+    init(hostname: String, slug: String, token: String, eventDelegate: RocketExpoEventsDelegate) {
         self.hostname = hostname
         self.slug = slug
         self.token = token
+        self.eventDelegate = eventDelegate
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -59,14 +61,20 @@ class RocketExpoPlayerViewController: UIViewController {
     }
     
     public override func viewDidAppear(_ animated: Bool) {
-        self.player = RocketPlayer.init(player: playerView, hostname: self.hostname, parentViewController: self)
+        self.eventDelegate.onFullscreenPlayerOpened()
+        let delegate = RocketExpoPlayerDelegate(parentViewController: playerViewController, eventDelegate: eventDelegate) {
+            self.dismiss(animated: true)
+        }
+        self.player = RocketPlayer.init(player: playerView, hostname: self.hostname, delegate: delegate)
         self.player!.play(slug: self.slug, token: self.token) { maybeError in
             switch maybeError {
             case .none:
-                print("started")
+                RocketExpoModule.loggerDelegate.info(message: "\(String(describing: Self.self)) playback started")
                 break
             case let .some(error):
-                print("error", error.type, error.message)
+                RocketExpoModule.loggerDelegate.error(message: "\(String(describing: Self.self)) error starting playback \(error.type): \(error.message)")
+                self.eventDelegate.onErrorPlaybackAborted(type: "generic")
+                self.dismiss(animated: true)
                 break
             }
         }
@@ -74,5 +82,6 @@ class RocketExpoPlayerViewController: UIViewController {
     
     public override func viewWillDisappear(_ animated: Bool) {
         self.player = nil
+        self.eventDelegate.onFullscreenPlayerClosed()
     }
 }
