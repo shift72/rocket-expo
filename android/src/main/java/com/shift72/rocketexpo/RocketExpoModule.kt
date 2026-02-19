@@ -53,7 +53,22 @@ class RocketExpoModule : Module() {
         }
       }
       // Defines an event that the view can send to JavaScript.
-      Events("onPlaybackCompleted")
+      Events("onPlaybackCompleted") // already here
+
+      Events("onTimeChanged")
+      Events("onPaused")
+      Events("onPlay")
+      Events("onFullscreenEnter")
+      Events("onFullscreenExit")
+
+//      onTimeChanged
+//      onPaused
+//      onPlay
+//      onFullscreenEnter
+//      onFullscreenExit
+//      onMuted
+//      onUnmuted
+//      onCompleted
     }
   }
 
@@ -62,3 +77,6 @@ class RocketExpoModule : Module() {
     @Field val token: String = ""
   ) : Record
 }
+
+
+//this@ExpoSettingsModule.sendEvent("onChangeTheme", bundleOf("theme" to theme))
