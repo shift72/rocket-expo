@@ -3,6 +3,7 @@ package com.shift72.rocketexpo
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.util.Log
 import android.widget.FrameLayout
 import com.shift72.mobile.rocketsdk.RocketPlayerLogger
 import com.shift72.mobile.rocketsdk.core.RocketDelegate
@@ -50,110 +51,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
 
   internal var config: PlaybackConfig? = null
 
-  internal val rocketDelegateListener = object: RocketDelegate {
-    override fun onWatchWindow(action: WatchWindowAction?, timeToWatch: String?) {
-      action ?: return
-
-      val watchText: String = context.getString(RocketSdkR.string.rocketsdk_watch_now_action)
-      val alertDialogText: String =
-        context.getString(RocketSdkR.string.rocketsdk_watch_window_dialog_text, watchText, timeToWatch)
-      val builder = AlertDialog.Builder(context)
-      builder.setMessage(alertDialogText)
-        .setTitle(context.getString(RocketSdkR.string.rocketsdk_watch_window_title))
-        .setPositiveButton(
-          watchText,
-          DialogInterface.OnClickListener { dialogInterface: DialogInterface?, i: Int ->
-            action.startWatchWindow()
-          })
-        .setNegativeButton(context.getString(RocketSdkR.string.rocketsdk_cancel)) { dialogInterface, i ->
-          action.cancel()
-        }
-        .setCancelable(false)
-
-      val dialog = builder.create()
-      dialog.show()
-    }
-
-    override fun onFoundPlaybackProgress(
-      action: PlaybackProgressAction?,
-      position: Int,
-      length: Int
-    ) {
-      action?: return
-
-      val hours = position / 3600
-      val minutes = (position % 3600) / 60
-      val seconds = position % 60
-
-      val resumePos = String.format("%02d:%02d:%02d", hours, minutes, seconds)
-
-      val builder = AlertDialog.Builder(context)
-      builder.setMessage(context.getString(RocketSdkR.string.rocketsdk_resume_from_dialog_text, resumePos))
-//        .setTitle(context.getString(RocketSdkR.string.rocketsdk_resume_from_title))
-        .setTitle("WOWOWOWO")
-        .setPositiveButton(context.getString(RocketSdkR.string.rocketsdk_resume_from_resume_action)) { dialogInterface, i ->
-          action.resumePlaybackFromProgress()
-        }
-        .setNegativeButton(context.getString(RocketSdkR.string.rocketsdk_cancel)) { dialogInterface, i ->
-          action.cancel()
-        }
-        .setNeutralButton(context.getString(RocketSdkR.string.rocketsdk_resume_from_start_over_action)) { dialogInterface, i ->
-          action.startOverFromBeginning()
-        }.setCancelable(false)
-
-      val dialog = builder.create()
-      dialog.show()
-    }
-
-    override fun onTooManyDevicesPlaybackAborted() {
-      val builder = AlertDialog.Builder(context)
-      builder.setMessage(context.getString(RocketSdkR.string.rocketsdk_too_many_devices_dialog_text))
-        .setTitle(context.getString(RocketSdkR.string.rocketsdk_too_many_devices_title))
-        .setNegativeButton(context.getString(RocketSdkR.string.rocketsdk_ok)) { dialogInterface, i ->
-          this@RocketExpoView.onPlaybackCompleted(emptyMap())
-        }
-        .setCancelable(false)
-
-      val dialog = builder.create()
-      dialog.show()
-    }
-
-    override fun onTooManyConcurrentStreamsPlaybackAborted() {
-
-      TODO("Not yet implemented")
-    }
-
-    override fun onPlaybackCompleted(reason: a?) {
-      this@RocketExpoView.onPlaybackCompleted(emptyMap())
-    }
-
-    override fun onErrorPlaybackAborted() {
-      val builder = AlertDialog.Builder(context)
-      builder.setMessage(context.getString(RocketSdkR.string.rocketsdk_playback_error_dialog_text))
-        .setTitle(context.getString(RocketSdkR.string.rocketsdk_error_title))
-        .setNegativeButton(context.getString(RocketSdkR.string.rocketsdk_ok)) { dialogInterface, i ->
-          this@RocketExpoView.onPlaybackCompleted(emptyMap())
-        }
-        .setCancelable(false)
-
-      val dialog = builder.create()
-      dialog.show()
-    }
-
-    override fun onAuthorizationErrorPlaybackAborted() {
-      val builder = AlertDialog.Builder(context)
-      builder.setMessage(context.getString(RocketSdkR.string.rocketsdk_too_many_devices_unauthorized_error_dialog_text))
-        .setTitle(context.getString(RocketSdkR.string.rocketsdk_error_title))
-        .setNegativeButton(context.getString(RocketSdkR.string.rocketsdk_ok)) { dialogInterface, i ->
-          this@RocketExpoView.onPlaybackCompleted(emptyMap())
-        }
-        .setCancelable(false)
-
-      val dialog = builder.create()
-      dialog.show()
-    }
-
-  }
+//  internal val rocketDelegateListener = object
 
   override fun onDetachedFromWindow() {
     super.onDetachedFromWindow()
@@ -176,8 +74,8 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
       .MakeRocketPlayerLaunchpad(context, playerView)
       .setBaseUrl(hostname)
       .setRocketPlayerListener(playerLogger)
-      .setRocketDelegate(rocketDelegateListener)
-      //.setRocketOnCompleteCallback(this::onRocketComplete)
+//      .setRocketDelegate(rocketDelegateListener)
+      .setRocketOnCompleteCallback(this::onRocketComplete)
       .build()
     playerView.showController();
     addView(playerView)

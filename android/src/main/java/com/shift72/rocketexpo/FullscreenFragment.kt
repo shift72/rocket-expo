@@ -84,6 +84,7 @@ class FullscreenFragment : Fragment() {
   }
 
   override fun onStart() {
+
     super.onStart()
     val slug = requireActivity().intent.getStringExtra("slug")
     val token = requireActivity().intent.getStringExtra("token")
@@ -141,6 +142,7 @@ class FullscreenFragment : Fragment() {
   }
 
   private fun onRocketComplete() {
+//    RocketExpoModule.mod?.get()?.sendEvent("onPlaybackCompleted", emptyMap())
     android.util.Log.d("FullscreenFragment", "Playback complete")
 
     val act = getActivity()
