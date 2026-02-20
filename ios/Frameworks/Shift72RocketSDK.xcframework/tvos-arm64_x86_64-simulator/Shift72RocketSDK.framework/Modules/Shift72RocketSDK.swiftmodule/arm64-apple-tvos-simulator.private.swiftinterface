@@ -70,7 +70,7 @@ public class DefaultRocketPlayerDelegate : Shift72RocketSDK.RocketPlayerDelegate
   public func onTooManyDevicesPlaybackAborted()
   public func onTooManyConcurrentStreamsPlaybackAborted()
   public func onPlaybackStarted()
-  public func onPlaybackCompleted()
+  public func onPlaybackCompleted(reason: Shift72RocketSDK.PlaybackCompletionReason)
   public func onPlayPauseChanged(newState: Shift72RocketSDK.PlayPauseState)
   public func onBufferingStateChanged(newState: Shift72RocketSDK.BufferingState)
   public func onErrorPlaybackAborted()
@@ -142,13 +142,22 @@ public enum BufferingState {
     get
   }
 }
+public enum PlaybackCompletionReason {
+  case ReachedEnd
+  case UserAborted
+  public static func == (a: Shift72RocketSDK.PlaybackCompletionReason, b: Shift72RocketSDK.PlaybackCompletionReason) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public protocol RocketPlayerDelegate {
   func onWatchWindow(timeToWatch: Swift.Int, response: @escaping (Shift72RocketSDK.WatchWindowResponse) -> Swift.Void)
   func onFoundPlaybackProgress(position: Swift.Int, length: Swift.Int, response: @escaping (Shift72RocketSDK.PlaybackProgressResponse) -> Swift.Void)
   func onPlaybackStarted()
   func onPlayPauseChanged(newState: Shift72RocketSDK.PlayPauseState)
   func onBufferingStateChanged(newState: Shift72RocketSDK.BufferingState)
-  func onPlaybackCompleted()
+  func onPlaybackCompleted(reason: Shift72RocketSDK.PlaybackCompletionReason)
   func onErrorPlaybackAborted()
   func onAuthorizationErrorPlaybackAborted()
   func onTooManyDevicesPlaybackAborted()
@@ -172,3 +181,5 @@ extension Shift72RocketSDK.PlayPauseState : Swift.Equatable {}
 extension Shift72RocketSDK.PlayPauseState : Swift.Hashable {}
 extension Shift72RocketSDK.BufferingState : Swift.Equatable {}
 extension Shift72RocketSDK.BufferingState : Swift.Hashable {}
+extension Shift72RocketSDK.PlaybackCompletionReason : Swift.Equatable {}
+extension Shift72RocketSDK.PlaybackCompletionReason : Swift.Hashable {}

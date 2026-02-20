@@ -89,8 +89,10 @@ public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
         self.eventDelegate.onBufferingStateChanged(newState: newState)
     }
     
-    public func onPlaybackCompleted() {
-        self.eventDelegate.onPlaybackCompleted()
+    public func onPlaybackCompleted(reason: PlaybackCompletionReason) {
+        if reason == .ReachedEnd {
+            self.eventDelegate.onPlaybackCompleted()
+        }
         self.onComplete()
     }
     
