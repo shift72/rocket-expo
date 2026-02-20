@@ -15,7 +15,8 @@ public class RocketExpoModule: Module {
         RocketExpoView.hostname = hostname
     }
 
-    Function("setupLogger") {
+    Function("setupLogger") { (prefix: String) in
+        RocketExpoModule.loggerDelegate.prefix = prefix
         Shift72RocketSDK.Logger.setDelegate(RocketExpoModule.loggerDelegate)
     }
 

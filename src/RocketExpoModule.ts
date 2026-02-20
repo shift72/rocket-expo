@@ -3,7 +3,7 @@ import { PlaybackConfig, RocketExpoModuleEvents } from './RocketExpo.types';
 
 declare class RocketExpoModule extends NativeModule<RocketExpoModuleEvents> {
   setupHostname(hostname: string): void;
-  setupLogger(): void;
+  setupLogger(prefix: string): void;
   openPlayerFullscreen(config: PlaybackConfig): void
 }
 

@@ -38,5 +38,5 @@ export type RocketExpoPlaybackProgress = {
 
 export type RocketExpoPlaybackAbortError = {
   type: string,
-  message: string
+  message?: string
 }

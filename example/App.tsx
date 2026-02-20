@@ -9,7 +9,7 @@ const token = ""
 export default function App() {
   useEffect(() => {
     RocketExpo.setupHostname(hostname);
-    RocketExpo.setupLogger();
+    RocketExpo.setupLogger("RocketExpoLogger");
     RocketExpo.addListener('onFullscreenEnter', () => { console.log('onFullscreenEnter') })
     RocketExpo.addListener('onFullscreenExit', () => { console.log('onFullscreenExit') })
     RocketExpo.addListener('onPlayerReady', () => { console.log('onPlayerReady') })
