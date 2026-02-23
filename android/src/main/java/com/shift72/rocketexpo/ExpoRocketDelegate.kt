@@ -51,8 +51,7 @@ class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketE
 
         val builder = AlertDialog.Builder(context)
         builder.setMessage(context.getString(R.string.rocketsdk_resume_from_dialog_text, resumePos))
-//        .setTitle(context.getString(RocketSdkR.string.rocketsdk_resume_from_title))
-            .setTitle("WOWOWOWO")
+            .setTitle(context.getString(R.string.rocketsdk_resume_from_title))
             .setPositiveButton(context.getString(R.string.rocketsdk_resume_from_resume_action)) { dialogInterface, i ->
                 action.resumePlaybackFromProgress()
             }
@@ -113,6 +112,18 @@ class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketE
 
         val dialog = builder.create()
         dialog.show()
+    }
+
+    override fun onPaused() {
+        module.get()?.sendEvent("onPause", emptyMap())
+    }
+
+    override fun onPlaying() {
+        module.get()?.sendEvent("onPlay", emptyMap())
+    }
+
+    override fun onBuffering() {
+        module.get()?.sendEvent("onBuffering", emptyMap())
     }
 
     fun doAbort(type: String) {

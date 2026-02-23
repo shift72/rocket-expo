@@ -43,19 +43,20 @@ class RocketExpoModule : Module() {
       context.startActivity(myIntent)
     }
 
-    Function("setupLogger") { prefix: String ->
-      RocketExpoView.playerLogger = RocketExpoLogger(appContext, prefix)
+    Function("setupLogger") {
+      RocketExpoView.playerLogger = RocketExpoLogger(appContext)
+      true
     }
 
     OnActivityDestroys() {
       android.util.Log.d("TAG", "OnActivityDestroys")
     }
 
-    Events("onPlaybackCompleted", "onTimeChanged", "onPaused", "onPlay", "onFullscreenEnter", "onFullscreenExit", "onAborted")
+    Events("onPlaybackCompleted", "onPlayCancelled", "onTimeChanged", "onPause", "onPlay", "onFullscreenEnter", "onFullscreenExit", "onAborted", "onBuffering")
 
     //      onTimeChanged todo
-    //      onPaused todo
-    //      onPlay todo
+    //      onPause DONE
+    //      onPlay DONE
     //      onFullscreenEnter todo
     //      onFullscreenExit todo
     //      onMuted todo

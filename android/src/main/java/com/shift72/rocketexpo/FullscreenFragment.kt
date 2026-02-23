@@ -49,6 +49,7 @@ class FullscreenFragment : Fragment() {
       setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_ic_chevron_left)
       setBackgroundColor(Color.TRANSPARENT)
       setOnClickListener {
+        RocketExpoModule.mod?.get()?.sendEvent("onPlaybackCompleted", emptyMap())
         onRocketComplete()
       }
     }
@@ -137,12 +138,14 @@ class FullscreenFragment : Fragment() {
       .MakeRocketPlayerLaunchpad(getActivity(), surface)
       .setBaseUrl(hostname)
       .setRocketPlayerListener(RocketExpoView.playerLogger)
-      .setRocketOnCompleteCallback(this::onRocketComplete)
+      .setRocketDelegate(ExpoRocketDelegate(requireContext(), RocketExpoModule.mod!!, this::onRocketComplete))
+//      .setRocketOnCompleteCallback(this::onRocketComplete)
       .build()
+
+
   }
 
   private fun onRocketComplete() {
-//    RocketExpoModule.mod?.get()?.sendEvent("onPlaybackCompleted", emptyMap())
     android.util.Log.d("FullscreenFragment", "Playback complete")
 
     val act = getActivity()
