@@ -52,9 +52,9 @@ class RocketExpoModule : Module() {
       android.util.Log.d("TAG", "OnActivityDestroys")
     }
 
-    Events("onPlaybackCompleted", "onPlayCancelled", "onTimeChanged", "onPause", "onPlay", "onFullscreenEnter", "onFullscreenExit", "onAborted", "onBuffering")
+    Events("onPlaybackCompleted", "onUserPlaybackAborted", "onPlayCancelled", "onTimeChanged", "onPause", "onPlay", "onFullscreenEnter", "onFullscreenExit", "onErrorPlaybackAborted", "onBuffering")
 
-    //      onTimeChanged todo
+    //      onTimeChanged DONE
     //      onPause DONE
     //      onPlay DONE
     //      onFullscreenEnter todo

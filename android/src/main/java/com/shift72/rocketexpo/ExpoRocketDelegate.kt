@@ -3,19 +3,15 @@ package com.shift72.rocketexpo
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
-import android.util.Log
 import com.shift72.mobile.rocketsdk.R
 import com.shift72.mobile.rocketsdk.core.RocketDelegate
-import com.shift72.mobile.rocketsdk.core.a
 import com.shift72.mobile.rocketsdk.core.action.PlaybackProgressAction
 import com.shift72.mobile.rocketsdk.core.action.WatchWindowAction
 import java.lang.ref.WeakReference
 
 class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketExpoModule>, val onPlaybackEnded: () -> Unit): RocketDelegate {
 
-    override fun onWatchWindow(action: WatchWindowAction?, timeToWatch: String?) {
-        action ?: return
-
+    override fun onWatchWindow(action: WatchWindowAction, timeToWatch: String) {
         val watchText: String = context.getString(R.string.rocketsdk_watch_now_action)
         val alertDialogText: String =
             context.getString(R.string.rocketsdk_watch_window_dialog_text, watchText, timeToWatch)
@@ -37,12 +33,10 @@ class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketE
     }
 
     override fun onFoundPlaybackProgress(
-        action: PlaybackProgressAction?,
+        action: PlaybackProgressAction,
         position: Int,
         length: Int
     ) {
-        action?: return
-        Log.e("TAG", "onFoundPlaybackProgress: FOR FUCK SAKE " )
         val hours = position / 3600
         val minutes = (position % 3600) / 60
         val seconds = position % 60
@@ -71,7 +65,7 @@ class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketE
         builder.setMessage(context.getString(R.string.rocketsdk_too_many_devices_dialog_text))
             .setTitle(context.getString(R.string.rocketsdk_too_many_devices_title))
             .setNegativeButton(context.getString(R.string.rocketsdk_ok)) { dialogInterface, i ->
-                doAbort("too_many_devices")
+                doErrorAbort("too_many_devices")
             }
             .setCancelable(false)
 
@@ -80,12 +74,22 @@ class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketE
     }
 
     override fun onTooManyConcurrentStreamsPlaybackAborted() {
-        doAbort("too_many_streams")
+        doErrorAbort("too_many_streams")
     }
 
-    override fun onPlaybackCompleted(reason: a?) {
-        module.get()?.sendEvent("onPlaybackCompleted", emptyMap())
-        onPlaybackEnded()
+    override fun onPlaybackCompleted(reason: RocketDelegate.CompletionReason) {
+        when (reason) {
+            RocketDelegate.CompletionReason.REACHED_END -> {
+                module.get()?.sendEvent("onPlaybackCompleted", emptyMap())
+                onPlaybackEnded()
+            }
+            RocketDelegate.CompletionReason.ERROR -> {
+                doErrorAbort("generic")
+            }
+            RocketDelegate.CompletionReason.USER_ABORTED -> {
+                doUserAbort()
+            }
+        }
     }
 
     override fun onErrorPlaybackAborted() {
@@ -93,7 +97,7 @@ class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketE
         builder.setMessage(context.getString(R.string.rocketsdk_playback_error_dialog_text))
             .setTitle(context.getString(R.string.rocketsdk_error_title))
             .setNegativeButton(context.getString(R.string.rocketsdk_ok)) { dialogInterface, i ->
-                doAbort("generic")
+                doErrorAbort("generic")
             }
             .setCancelable(false)
 
@@ -106,7 +110,7 @@ class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketE
         builder.setMessage(context.getString(R.string.rocketsdk_too_many_devices_unauthorized_error_dialog_text))
             .setTitle(context.getString(R.string.rocketsdk_error_title))
             .setNegativeButton(context.getString(R.string.rocketsdk_ok)) { dialogInterface, i ->
-                doAbort("authorization")
+                doErrorAbort("authorization")
             }
             .setCancelable(false)
 
@@ -126,8 +130,17 @@ class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketE
         module.get()?.sendEvent("onBuffering", emptyMap())
     }
 
-    fun doAbort(type: String) {
-        module.get()?.sendEvent("onAborted", mapOf("type" to type))
+    override fun onProgressUpdate(elapsedSeconds: Double, runtimeSeconds: Double) {
+        module.get()?.sendEvent("onProgressUpdate", mapOf("elapsedSeconds" to elapsedSeconds, "runtimeSeconds" to runtimeSeconds))
+    }
+
+    private fun doUserAbort() {
+        module.get()?.sendEvent("onUserPlaybackAborted", emptyMap())
+        onPlaybackEnded()
+    }
+
+    private fun doErrorAbort(type: String) {
+        module.get()?.sendEvent("onErrorPlaybackAborted", mapOf("type" to type))
         onPlaybackEnded()
     }
 
