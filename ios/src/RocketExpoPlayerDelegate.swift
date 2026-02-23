@@ -92,6 +92,8 @@ public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
     public func onPlaybackCompleted(reason: PlaybackCompletionReason) {
         if reason == .ReachedEnd {
             self.eventDelegate.onPlaybackCompleted()
+        } else {
+            self.eventDelegate.onUserPlaybackAborted()
         }
         self.onComplete()
     }

@@ -28,6 +28,9 @@ export type RocketExpoModuleEvents = {
 
   onErrorPlaybackAborted(event: RocketExpoPlaybackAbortError): void;
 
+  // iOS only: Doesn't fire when closing a fullscreen player due to technical limitations
+  onUserPlaybackAborted(): void;
+
   onPlaybackCompleted(): void;
 }
 

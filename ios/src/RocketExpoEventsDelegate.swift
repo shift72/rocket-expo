@@ -9,6 +9,7 @@ fileprivate let PAUSE_EVENT_NAME = "onPause"
 fileprivate let BUFFERING_EVENT_NAME = "onBuffering"
 fileprivate let PROGRESS_UPDATE_EVENT_NAME = "onProgressUpdate"
 fileprivate let ERROR_PLAYBACK_ABORTED_EVENT_NAME = "onErrorPlaybackAborted"
+fileprivate let USER_PLAYBACK_ABORTED_EVENT_NAME = "onUserPlaybackAborted"
 fileprivate let PLAYBACK_COMPLETED_EVENT_NAME = "onPlaybackCompleted"
 
 class RocketExpoEventsDelegate {
@@ -21,6 +22,7 @@ class RocketExpoEventsDelegate {
         BUFFERING_EVENT_NAME,
         PROGRESS_UPDATE_EVENT_NAME,
         ERROR_PLAYBACK_ABORTED_EVENT_NAME,
+        USER_PLAYBACK_ABORTED_EVENT_NAME,
         PLAYBACK_COMPLETED_EVENT_NAME,
     ]
     
@@ -69,6 +71,10 @@ class RocketExpoEventsDelegate {
     
     public func onPlaybackCompleted() {
         sendEvent(PLAYBACK_COMPLETED_EVENT_NAME)
+    }
+
+    public func onUserPlaybackAborted() {
+        sendEvent(USER_PLAYBACK_ABORTED_EVENT_NAME)
     }
     
     public func onErrorPlaybackAborted(type: String) {

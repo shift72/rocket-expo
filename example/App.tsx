@@ -18,6 +18,7 @@ export default function App() {
     RocketExpo.addListener('onBuffering', () => { console.log('onBuffering') })
     RocketExpo.addListener('onProgressUpdate', (e: RocketExpoPlaybackProgress) => { console.log('onProgressUpdate ' + JSON.stringify(e)) })
     RocketExpo.addListener('onErrorPlaybackAborted', (e: RocketExpoPlaybackAbortError) => { console.log('onErrorPlaybackAborted ' + JSON.stringify(e)) })
+    RocketExpo.addListener('onUserPlaybackAborted', () => { console.log('onUserPlaybackAborted') })
     RocketExpo.addListener('onPlaybackCompleted', () => { console.log('onPlaybackCompleted') })
   },[]);
 
