@@ -49,7 +49,7 @@ class FullscreenFragment : Fragment() {
       setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_ic_chevron_left)
       setBackgroundColor(Color.TRANSPARENT)
       setOnClickListener {
-        RocketExpoModule.mod?.get()?.sendEvent("onPlaybackCompleted", emptyMap())
+        RocketExpoModule.mod?.get()?.sendEvent("onUserPlaybackAborted", emptyMap())
         onRocketComplete()
       }
     }
@@ -113,6 +113,8 @@ class FullscreenFragment : Fragment() {
       WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
     window.statusBarColor = Color.BLACK
     window.navigationBarColor = Color.BLACK
+    RocketExpoModule.mod?.get()?.sendEvent("onFullscreenEnter", emptyMap())
+
   }
 
   private fun exitImmersiveMode() {
@@ -120,6 +122,7 @@ class FullscreenFragment : Fragment() {
     WindowCompat.setDecorFitsSystemWindows(window, true)
     WindowInsetsControllerCompat(window, window.decorView)
       .show(WindowInsetsCompat.Type.systemBars())
+    RocketExpoModule.mod?.get()?.sendEvent("onFullscreenExit", emptyMap())
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -139,7 +142,6 @@ class FullscreenFragment : Fragment() {
       .setBaseUrl(hostname)
       .setRocketPlayerListener(RocketExpoView.playerLogger)
       .setRocketDelegate(ExpoRocketDelegate(requireContext(), RocketExpoModule.mod!!, this::onRocketComplete))
-//      .setRocketOnCompleteCallback(this::onRocketComplete)
       .build()
 
 

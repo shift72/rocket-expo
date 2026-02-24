@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.FrameLayout
 import com.shift72.mobile.rocketsdk.RocketPlayerLogger
 import com.shift72.mobile.rocketsdk.core.RocketDelegate
-import com.shift72.mobile.rocketsdk.core.a
 import com.shift72.mobile.rocketsdk.core.action.PlaybackProgressAction
 import com.shift72.mobile.rocketsdk.core.action.WatchWindowAction
 import com.shift72.mobile.rocketsdk.launchpad.RocketPlayerLaunchpadBase
