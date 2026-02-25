@@ -22,13 +22,6 @@ import com.shift72.mobile.rocketsdk.R as RocketSdkR
 
 class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(context, appContext) {
 
-  private val onPlaybackCompleted by EventDispatcher()
-
-  private val onTimeChanged by EventDispatcher()
-  private val onPaused by EventDispatcher()
-  private val onPlay by EventDispatcher()
-  private val onFullscreenEnter by EventDispatcher()
-  private val onFullscreenExit by EventDispatcher()
 
   companion object { // Static variables
     var hostname = ""
@@ -37,7 +30,6 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
 
   fun onRocketComplete() {
     android.util.Log.d("TAG", "onRocketComplete: its done")
-    onPlaybackCompleted(emptyMap())
   }
 
   internal val playerView: RocketSurface = RocketSurface(context).apply {
@@ -64,6 +56,9 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
   override fun onAttachedToWindow() {
     super.onAttachedToWindow()
 
+    val onPlaybackCompleted = ExpoRocketDelegate(context, RocketExpoModule.mod!!, this::onRocketComplete)
+
+
     if (hostname.isEmpty()){
       appContext.errorManager?.reportWarningToLogBox("you must set a hostname")
     }
@@ -73,8 +68,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
       .MakeRocketPlayerLaunchpad(context, playerView)
       .setBaseUrl(hostname)
       .setRocketPlayerListener(playerLogger)
-//      .setRocketDelegate(rocketDelegateListener)
-      .setRocketOnCompleteCallback(this::onRocketComplete)
+      .setRocketDelegate(onPlaybackCompleted)
       .build()
     playerView.showController();
     addView(playerView)

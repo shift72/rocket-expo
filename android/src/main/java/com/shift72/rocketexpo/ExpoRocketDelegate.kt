@@ -74,7 +74,13 @@ class ExpoRocketDelegate(val context: Context, val module: WeakReference<RocketE
     }
 
     override fun onTooManyConcurrentStreamsPlaybackAborted() {
-        doErrorAbort("too_many_streams")
+        val builder = AlertDialog.Builder(context)
+        builder.setMessage(context.getString(R.string.rocketsdk_too_many_concurrent_streams_dialog_text))
+            .setTitle(context.getString(R.string.rocketsdk_too_many_concurrent_streams_title))
+            .setNegativeButton(context.getString(R.string.rocketsdk_ok)) { dialogInterface, i ->
+                doErrorAbort("too_many_streams")
+            }
+            .setCancelable(false)
     }
 
     override fun onPlaybackCompleted(reason: RocketDelegate.CompletionReason) {
