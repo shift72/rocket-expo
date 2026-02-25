@@ -52,16 +52,7 @@ class RocketExpoModule : Module() {
     }
 
     Events("onPlaybackCompleted", "onUserPlaybackAborted", "onTimeChanged", "onPause", "onPlay", "onFullscreenEnter", "onFullscreenExit", "onErrorPlaybackAborted", "onBuffering", "onProgressUpdate")
-
-    //      onTimeChanged DONE
-    //      onPause DONE
-    //      onPlay DONE
-    //      onFullscreenEnter todo
-    //      onFullscreenExit todo
-    //      onMuted todo
-    //      onUnmuted todo
-    //      onCompleted DONE
-    //      onAborted DONE
+    
     // Enables the module to be used as a native view. Definition components that are accepted as part of
     // the view definition: Prop, Events.
     View(RocketExpoView::class) {
