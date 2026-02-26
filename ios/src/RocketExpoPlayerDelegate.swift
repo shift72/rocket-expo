@@ -1,6 +1,6 @@
 //
 //  RocketExpoPlayerDelegate.swift
-//  Pods
+//  Shift72RocketSDKExpo
 //
 //  Created by Declan ter Veer-Burke on 24/10/2025.
 //
@@ -9,10 +9,12 @@ import Shift72RocketSDK
 
 public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
     private weak var parentViewController: UIViewController?
+    private var eventDelegate: RocketExpoEventsDelegate
     private var onComplete: () -> Void
     
-    public init(parentViewController: UIViewController, onComplete: @escaping () -> Void) {
+    init(parentViewController: UIViewController, eventDelegate: RocketExpoEventsDelegate, onComplete: @escaping () -> Void) {
         self.parentViewController = parentViewController
+        self.eventDelegate = eventDelegate
         self.onComplete = onComplete
     }
     
@@ -57,6 +59,7 @@ public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Too Many Devices", message: "You have reached the max number of registered devices on your account.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+                self.eventDelegate.onErrorPlaybackAborted(type: "too_many_devices")
                 self.onComplete()
             }))
             self.parentViewController?.present(alert, animated: true, completion: nil)
@@ -67,6 +70,7 @@ public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Too Many Concurrent Streams", message: "Your account is currently being used by too many other devices or browsers.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+                self.eventDelegate.onErrorPlaybackAborted(type: "too_many_streams")
                 self.onComplete()
             }))
             self.parentViewController?.present(alert, animated: true, completion: nil)
@@ -74,25 +78,31 @@ public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
     }
     
     public func onPlaybackStarted() {
-        // nothing
-    }
-    
-    public func onPlaybackCompleted() {
-        self.onComplete()
+        self.eventDelegate.onPlaybackStarted()
     }
     
     public func onPlayPauseChanged(newState: PlayPauseState) {
-        // nothing
+        self.eventDelegate.onPlayPauseChanged(newState: newState)
     }
     
     public func onBufferingStateChanged(newState: BufferingState) {
-        // nothing
+        self.eventDelegate.onBufferingStateChanged(newState: newState)
+    }
+    
+    public func onPlaybackCompleted(reason: PlaybackCompletionReason) {
+        if reason == .ReachedEnd {
+            self.eventDelegate.onPlaybackCompleted()
+        } else {
+            self.eventDelegate.onUserPlaybackAborted()
+        }
+        self.onComplete()
     }
     
     public func onErrorPlaybackAborted() {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Playback Aborted", message: "Something went wrong", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+                self.eventDelegate.onErrorPlaybackAborted(type: "generic")
                 self.onComplete()
             }))
             self.parentViewController?.present(alert, animated: true, completion: nil)
@@ -103,6 +113,7 @@ public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Authorisation Error", message: "Authorisation is not valid", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+                self.eventDelegate.onErrorPlaybackAborted(type: "authorization")
                 self.onComplete()
             }))
             self.parentViewController?.present(alert, animated: true, completion: nil)
@@ -114,6 +125,6 @@ public class RocketExpoPlayerDelegate: RocketPlayerDelegate {
     }
     
     public func onProgressUpdate(elapsedSeconds: Double, runtimeSeconds: Double) {
-        // nothing
+        self.eventDelegate.onProgressUpdate(elapsedSeconds: elapsedSeconds, runtimeSeconds: runtimeSeconds)
     }
 }

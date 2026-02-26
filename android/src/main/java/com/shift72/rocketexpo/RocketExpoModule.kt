@@ -13,12 +13,20 @@ import com.shift72.rocketexpo.ScreenActivity
 import android.content.Intent
 
 import com.shift72.rocketexpo.RocketExpoLogger
+import java.lang.ref.WeakReference
 
 class RocketExpoModule : Module() {
 
+  companion object {
+    var mod: WeakReference<RocketExpoModule>? = null
+  }
+
+  init {
+    mod = WeakReference(this@RocketExpoModule)
+  }
+
 
   override fun definition() = ModuleDefinition {
-
     Name("RocketExpo")
 
     Function("setupHostname") { hostname: String ->
@@ -43,6 +51,8 @@ class RocketExpoModule : Module() {
       android.util.Log.d("TAG", "OnActivityDestroys")
     }
 
+    Events("onPlaybackCompleted", "onUserPlaybackAborted", "onTimeChanged", "onPause", "onPlay", "onFullscreenEnter", "onFullscreenExit", "onErrorPlaybackAborted", "onBuffering", "onProgressUpdate")
+    
     // Enables the module to be used as a native view. Definition components that are accepted as part of
     // the view definition: Prop, Events.
     View(RocketExpoView::class) {
@@ -53,7 +63,9 @@ class RocketExpoModule : Module() {
         }
       }
       // Defines an event that the view can send to JavaScript.
-      Events("onPlaybackCompleted")
+
+
+
     }
   }
 
@@ -62,3 +74,6 @@ class RocketExpoModule : Module() {
     @Field val token: String = ""
   ) : Record
 }
+
+
+//this@ExpoSettingsModule.sendEvent("onChangeTheme", bundleOf("theme" to theme))

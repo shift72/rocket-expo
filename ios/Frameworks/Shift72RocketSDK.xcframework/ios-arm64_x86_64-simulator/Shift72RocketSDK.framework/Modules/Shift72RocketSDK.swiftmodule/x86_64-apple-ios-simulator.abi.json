@@ -2380,17 +2380,23 @@
           {
             "kind": "Function",
             "name": "onPlaybackCompleted",
-            "printedName": "onPlaybackCompleted()",
+            "printedName": "onPlaybackCompleted(reason:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PlaybackCompletionReason",
+                "printedName": "Shift72RocketSDK.PlaybackCompletionReason",
+                "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:16Shift72RocketSDK07DefaultB14PlayerDelegateC19onPlaybackCompletedyyF",
-            "mangledName": "$s16Shift72RocketSDK07DefaultB14PlayerDelegateC19onPlaybackCompletedyyF",
+            "usr": "s:16Shift72RocketSDK07DefaultB14PlayerDelegateC19onPlaybackCompleted6reasonyAA0H16CompletionReasonO_tF",
+            "mangledName": "$s16Shift72RocketSDK07DefaultB14PlayerDelegateC19onPlaybackCompleted6reasonyAA0H16CompletionReasonO_tF",
             "moduleName": "Shift72RocketSDK",
             "declAttributes": [
               "AccessControl"
@@ -4222,6 +4228,220 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "PlaybackCompletionReason",
+        "printedName": "PlaybackCompletionReason",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "ReachedEnd",
+            "printedName": "ReachedEnd",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Shift72RocketSDK.PlaybackCompletionReason.Type) -> Shift72RocketSDK.PlaybackCompletionReason",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PlaybackCompletionReason",
+                    "printedName": "Shift72RocketSDK.PlaybackCompletionReason",
+                    "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Shift72RocketSDK.PlaybackCompletionReason.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PlaybackCompletionReason",
+                        "printedName": "Shift72RocketSDK.PlaybackCompletionReason",
+                        "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO10ReachedEndyA2CmF",
+            "mangledName": "$s16Shift72RocketSDK24PlaybackCompletionReasonO10ReachedEndyA2CmF",
+            "moduleName": "Shift72RocketSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "UserAborted",
+            "printedName": "UserAborted",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Shift72RocketSDK.PlaybackCompletionReason.Type) -> Shift72RocketSDK.PlaybackCompletionReason",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PlaybackCompletionReason",
+                    "printedName": "Shift72RocketSDK.PlaybackCompletionReason",
+                    "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Shift72RocketSDK.PlaybackCompletionReason.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PlaybackCompletionReason",
+                        "printedName": "Shift72RocketSDK.PlaybackCompletionReason",
+                        "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO11UserAbortedyA2CmF",
+            "mangledName": "$s16Shift72RocketSDK24PlaybackCompletionReasonO11UserAbortedyA2CmF",
+            "moduleName": "Shift72RocketSDK"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PlaybackCompletionReason",
+                "printedName": "Shift72RocketSDK.PlaybackCompletionReason",
+                "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PlaybackCompletionReason",
+                "printedName": "Shift72RocketSDK.PlaybackCompletionReason",
+                "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s16Shift72RocketSDK24PlaybackCompletionReasonO2eeoiySbAC_ACtFZ",
+            "moduleName": "Shift72RocketSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO9hashValueSivp",
+            "mangledName": "$s16Shift72RocketSDK24PlaybackCompletionReasonO9hashValueSivp",
+            "moduleName": "Shift72RocketSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO9hashValueSivg",
+                "mangledName": "$s16Shift72RocketSDK24PlaybackCompletionReasonO9hashValueSivg",
+                "moduleName": "Shift72RocketSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s16Shift72RocketSDK24PlaybackCompletionReasonO4hash4intoys6HasherVz_tF",
+            "moduleName": "Shift72RocketSDK",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO",
+        "mangledName": "$s16Shift72RocketSDK24PlaybackCompletionReasonO",
+        "moduleName": "Shift72RocketSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "RocketPlayerDelegate",
         "printedName": "RocketPlayerDelegate",
         "children": [
@@ -4408,17 +4628,23 @@
           {
             "kind": "Function",
             "name": "onPlaybackCompleted",
-            "printedName": "onPlaybackCompleted()",
+            "printedName": "onPlaybackCompleted(reason:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PlaybackCompletionReason",
+                "printedName": "Shift72RocketSDK.PlaybackCompletionReason",
+                "usr": "s:16Shift72RocketSDK24PlaybackCompletionReasonO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:16Shift72RocketSDK0B14PlayerDelegateP19onPlaybackCompletedyyF",
-            "mangledName": "$s16Shift72RocketSDK0B14PlayerDelegateP19onPlaybackCompletedyyF",
+            "usr": "s:16Shift72RocketSDK0B14PlayerDelegateP19onPlaybackCompleted6reasonyAA0G16CompletionReasonO_tF",
+            "mangledName": "$s16Shift72RocketSDK0B14PlayerDelegateP19onPlaybackCompleted6reasonyAA0G16CompletionReasonO_tF",
             "moduleName": "Shift72RocketSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : Shift72RocketSDK.RocketPlayerDelegate>",
             "sugared_genericSig": "<Self where Self : Shift72RocketSDK.RocketPlayerDelegate>",
@@ -5102,14 +5328,14 @@
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 4314,
+      "offset": 4333,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 4347,
+      "offset": 4366,
       "length": 4,
       "value": "1000"
     },
@@ -5293,7 +5519,7 @@
       "kind": "StringLiteral",
       "offset": 198,
       "length": 7,
-      "value": "\"0.5.3\""
+      "value": "\"0.6.0\""
     }
   ]
 }

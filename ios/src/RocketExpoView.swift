@@ -10,8 +10,6 @@ class RocketExpoView: ExpoView {
 
     var player: RocketPlayer?
 
-    let onPlaybackCompleted = EventDispatcher()
-
     public override var bounds: CGRect {
       didSet {
         playerViewController.view.frame = self.bounds
@@ -26,9 +24,14 @@ class RocketExpoView: ExpoView {
         playerViewController.player = playerView
         playerViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-        let delegate = RocketExpoPlayerDelegate(parentViewController: playerViewController, onComplete: {
-            self.onPlaybackCompleted([:])
-        })
+        guard let appContext else {
+            print("\(String(describing: Self.self)) Failed to initialise, appContext nil")
+            return
+        }
+        let eventDelegate = RocketExpoEventsDelegate(appContext: appContext)
+        let delegate = RocketExpoPlayerDelegate(parentViewController: playerViewController, eventDelegate: eventDelegate) {
+            // nothing
+        }
         if RocketExpoView.hostname.isEmpty {
             //appContext?.jsLogger.fatal("hostname must be set before initialising RocketExpoView")
         }

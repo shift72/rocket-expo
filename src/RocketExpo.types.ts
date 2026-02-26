@@ -7,6 +7,39 @@ export type PlaybackConfig = {
 
 export type RocketExpoViewProps = {
   playbackConfig: PlaybackConfig;
-  onPlaybackCompleted: () => void;
   style?: StyleProp<ViewStyle>;
+}
+
+export type RocketExpoModuleEvents = {
+
+  onFullscreenEnter(): void;
+
+  onFullscreenExit(): void;
+
+  onPlayerReady(): void;
+
+  onPlay(): void;
+
+  onPause(): void;
+
+  onBuffering(): void;
+
+  onProgressUpdate(event: RocketExpoPlaybackProgress): void;
+
+  onErrorPlaybackAborted(event: RocketExpoPlaybackAbortError): void;
+
+  // iOS only: Doesn't fire when closing a fullscreen player due to technical limitations
+  onUserPlaybackAborted(): void;
+
+  onPlaybackCompleted(): void;
+}
+
+export type RocketExpoPlaybackProgress = {
+  elapsedSeconds: number,
+  runtimeSeconds: number
+}
+
+export type RocketExpoPlaybackAbortError = {
+  type: string,
+  message?: string
 }

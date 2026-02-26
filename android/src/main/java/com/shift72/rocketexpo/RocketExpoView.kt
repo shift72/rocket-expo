@@ -1,31 +1,27 @@
 package com.shift72.rocketexpo
 
+import android.app.AlertDialog
 import android.content.Context
-import expo.modules.kotlin.AppContext
-import expo.modules.kotlin.viewevent.EventDispatcher
-import expo.modules.kotlin.views.ExpoView
-
-import com.shift72.mobile.rocketsdk.player.PlaybackCallback
+import android.content.DialogInterface
+import android.util.Log
+import android.widget.FrameLayout
+import com.shift72.mobile.rocketsdk.RocketPlayerLogger
+import com.shift72.mobile.rocketsdk.core.RocketDelegate
+import com.shift72.mobile.rocketsdk.core.action.PlaybackProgressAction
+import com.shift72.mobile.rocketsdk.core.action.WatchWindowAction
+import com.shift72.mobile.rocketsdk.launchpad.RocketPlayerLaunchpadBase
 import com.shift72.mobile.rocketsdk.player.RocketPlayer
 import com.shift72.mobile.rocketsdk.player.RocketPlayerListener
 import com.shift72.mobile.rocketsdk.player.RocketSurface
-import com.shift72.mobile.rocketsdk.RocketPlayerLogger
-import com.shift72.mobile.rocketsdk.launchpad.RocketPlayerLaunchpadBase
+import com.shift72.rocketexpo.RocketExpoModule.PlaybackConfig
+import expo.modules.kotlin.AppContext
+import expo.modules.kotlin.viewevent.EventDispatcher
+import expo.modules.kotlin.views.ExpoView
+import com.shift72.mobile.rocketsdk.R as RocketSdkR
 
-import com.google.android.exoplayer2.ui.StyledPlayerView
-import com.google.android.exoplayer2.SimpleExoPlayer
-import android.os.Looper
-
-import com.shift72.rocketexpo.RocketExpoModule.PlaybackConfig;
-
-import android.view.MotionEvent
-import android.widget.FrameLayout
-
-import android.os.Handler
-import java.lang.Runnable
 
 class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(context, appContext) {
-  private val onPlaybackCompleted by EventDispatcher()
+
 
   companion object { // Static variables
     var hostname = ""
@@ -34,7 +30,6 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
 
   fun onRocketComplete() {
     android.util.Log.d("TAG", "onRocketComplete: its done")
-    onPlaybackCompleted(emptyMap())
   }
 
   internal val playerView: RocketSurface = RocketSurface(context).apply {
@@ -46,6 +41,8 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
   internal var player: RocketPlayer? = null
 
   internal var config: PlaybackConfig? = null
+
+//  internal val rocketDelegateListener = object
 
   override fun onDetachedFromWindow() {
     super.onDetachedFromWindow()
@@ -59,6 +56,9 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
   override fun onAttachedToWindow() {
     super.onAttachedToWindow()
 
+    val rocketDelegate = ExpoRocketDelegate(context, RocketExpoModule.mod!!, this::onRocketComplete)
+
+
     if (hostname.isEmpty()){
       appContext.errorManager?.reportWarningToLogBox("you must set a hostname")
     }
@@ -68,7 +68,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
       .MakeRocketPlayerLaunchpad(context, playerView)
       .setBaseUrl(hostname)
       .setRocketPlayerListener(playerLogger)
-      .setRocketOnCompleteCallback(this::onRocketComplete)
+      .setRocketDelegate(rocketDelegate)
       .build()
     playerView.showController();
     addView(playerView)
