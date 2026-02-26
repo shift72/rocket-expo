@@ -56,7 +56,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
   override fun onAttachedToWindow() {
     super.onAttachedToWindow()
 
-    val onPlaybackCompleted = ExpoRocketDelegate(context, RocketExpoModule.mod!!, this::onRocketComplete)
+    val rocketDelegate = ExpoRocketDelegate(context, RocketExpoModule.mod!!, this::onRocketComplete)
 
 
     if (hostname.isEmpty()){
@@ -68,7 +68,7 @@ class RocketExpoView(context: Context, appContext: AppContext) : ExpoView(contex
       .MakeRocketPlayerLaunchpad(context, playerView)
       .setBaseUrl(hostname)
       .setRocketPlayerListener(playerLogger)
-      .setRocketDelegate(onPlaybackCompleted)
+      .setRocketDelegate(rocketDelegate)
       .build()
     playerView.showController();
     addView(playerView)
