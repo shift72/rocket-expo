@@ -2,4 +2,5 @@
 // and on native platforms to RocketExpoModule.ts
 export { default } from './RocketExpoModule';
 export { default as RocketExpoView } from './RocketExpoView';
-export * from  './RocketExpo.types';
+export * from './RocketExpoConvenience';
+export * from './RocketExpo.types';

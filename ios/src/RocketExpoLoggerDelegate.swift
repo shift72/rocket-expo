@@ -5,6 +5,7 @@
 //  Created by Declan ter Veer-Burke on 23/10/2025.
 //
 
+import os
 import ExpoModulesCore
 import Shift72RocketSDK
 
