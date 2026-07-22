@@ -1510,17 +1510,17 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -1714,13 +1714,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Error",
             "printedName": "Error",
             "usr": "s:s5ErrorP",
@@ -1728,10 +1721,24 @@
           },
           {
             "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Sendable",
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -2163,6 +2170,13 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "RocketPlayerDelegate",
+            "printedName": "RocketPlayerDelegate",
+            "usr": "s:16Shift72RocketSDK0B14PlayerDelegateP",
+            "mangledName": "$s16Shift72RocketSDK0B14PlayerDelegateP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Copyable",
             "printedName": "Copyable",
             "usr": "s:s8CopyableP",
@@ -2174,13 +2188,6 @@
             "printedName": "Escapable",
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "RocketPlayerDelegate",
-            "printedName": "RocketPlayerDelegate",
-            "usr": "s:16Shift72RocketSDK0B14PlayerDelegateP",
-            "mangledName": "$s16Shift72RocketSDK0B14PlayerDelegateP"
           }
         ]
       },
@@ -2468,17 +2475,17 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -3117,17 +3124,17 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -3369,17 +3376,17 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -3583,17 +3590,17 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -3797,17 +3804,17 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -4011,17 +4018,17 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -4983,91 +4990,91 @@
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 2897,
+      "offset": 2969,
       "length": 12,
       "value": "\"isPlayable\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 3011,
+      "offset": 3083,
       "length": 56,
       "value": "\"availableMediaCharacteristicsWithMediaSelectionOptions\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 4204,
+      "offset": 4276,
       "length": 8,
       "value": "\"status\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 4313,
+      "offset": 4385,
       "length": 21,
       "value": "\"playbackBufferEmpty\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 4435,
+      "offset": 4507,
       "length": 24,
       "value": "\"playbackLikelyToKeepUp\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 4560,
+      "offset": 4632,
       "length": 20,
       "value": "\"playbackBufferFull\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4809,
+      "offset": 4881,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4821,
+      "offset": 4893,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4981,
+      "offset": 5053,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4994,
+      "offset": 5066,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5117,
+      "offset": 5189,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5250,
+      "offset": 5322,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 5438,
+      "offset": 5510,
       "length": 58,
       "value": "\"Heartbeat frequency was 0, this will likely cause issues\""
     },
@@ -5076,7 +5083,7 @@
       "kind": "StringLiteral",
       "offset": 198,
       "length": 7,
-      "value": "\"0.6.0\""
+      "value": "\"0.6.2\""
     }
   ]
 }

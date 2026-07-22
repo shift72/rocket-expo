@@ -10,27 +10,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ul+O0OUEDxKV+OGkDsO6CBddkJk=
+		kzdmVQQLYaMDR6UJ27YKVMx1OsQ=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.abi.json</key>
 		<data>
-		bqXWaBKck/EIZE9W+MyW26pEW5E=
+		O+5q8RRiyJHDv2ZFZsE23j9/cIg=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
 		<data>
-		6MGoYYebi8NJRNALtZ6C7iFmJOk=
+		3RTJI66HjEogh0AoLn/27fspk98=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<data>
-		js9oHCmJwYQtOgU/MMpeOkPTbM0=
+		50G2SGYOKRfINIJy4ggQzT89Y0M=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<data>
-		6MGoYYebi8NJRNALtZ6C7iFmJOk=
+		3RTJI66HjEogh0AoLn/27fspk98=
 		</data>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<data>
-		enac5adIqYI38KA3WCLaFxGX8lU=
+		qDysfDrry/+w+EeX9WK/q20j94g=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,35 +50,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gT/CSsrSqFy6PkdX4M0qeYfPgxDw/QVB67YEifycKiQ=
+			/vhUuH/hgec0YlqiSVRozJCuJkjIr9rcHv1kDTCBl4o=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SxvKr4bJ/h5z0Bmy9NqQ2U2ge+kY6+Gse+9iyhSVkmg=
+			OitD9YBO/t0st1N9Be+AG0JhsIMjFHcgv8mYiO37tWI=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XgmqM/LqszR1U8n7/zm5Vfr44Vl5tt+OI2YY9VvKljU=
+			F0fHWfwqTwv4ROi9NjSvALtemnH6VqyQ1j4UhXZkCfU=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SxvKr4bJ/h5z0Bmy9NqQ2U2ge+kY6+Gse+9iyhSVkmg=
+			OitD9YBO/t0st1N9Be+AG0JhsIMjFHcgv8mYiO37tWI=
 			</data>
 		</dict>
 		<key>Modules/Shift72RocketSDK.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Dw7K+IRtNidwOO3/63neJhPSfiskl8YQQ3ATa/BtJU=
+			DsneWxStdeTwS6+fX4KNOytHwndQX4dLFeBjqTs3WHs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
