@@ -8,7 +8,7 @@
     "gradleAarProjects": [
       {
         "name": "rocket-sdk",
-        "aarFilePath": "android/libs/rocketsdk-0.2.3.aar"
+        "aarFilePath": "android/libs/rocketsdk-0.3.0-alpha.aar"
       }
     ]
   }

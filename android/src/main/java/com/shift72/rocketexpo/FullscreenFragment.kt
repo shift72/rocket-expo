@@ -11,10 +11,12 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.ImageButton
 import android.util.TypedValue
+import androidx.annotation.OptIn
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
+import androidx.media3.common.util.UnstableApi
 import com.shift72.mobile.rocketsdk.player.RocketSurface
 import com.shift72.mobile.rocketsdk.player.RocketPlayer
 import com.shift72.mobile.rocketsdk.launchpad.RocketPlayerLaunchpadBase
@@ -28,7 +30,8 @@ class FullscreenFragment : Fragment() {
     super.onCreate(savedInstanceState)
   }
 
-  override fun onCreateView(
+    @OptIn(UnstableApi::class)
+    override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
@@ -46,7 +49,7 @@ class FullscreenFragment : Fragment() {
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 55f, resources.displayMetrics).toInt()
       )
       scaleType = ImageView.ScaleType.FIT_XY
-      setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_ic_chevron_left)
+      setImageResource(androidx.media3.ui.R.drawable.exo_ic_chevron_left)
       setBackgroundColor(Color.TRANSPARENT)
       setOnClickListener {
         RocketExpoModule.mod?.get()?.sendEvent("onUserPlaybackAborted", emptyMap())
@@ -59,14 +62,14 @@ class FullscreenFragment : Fragment() {
         ViewGroup.LayoutParams.MATCH_PARENT,
         ViewGroup.LayoutParams.MATCH_PARENT
       )
-      setControllerVisibilityListener(object : com.google.android.exoplayer2.ui.StyledPlayerView.ControllerVisibilityListener {
+      setControllerVisibilityListener(object : androidx.media3.ui.PlayerView.ControllerVisibilityListener {
         override fun onVisibilityChanged(visibility: Int) {
-            if (visibility == com.google.android.exoplayer2.ui.StyledPlayerView.GONE && uiVisible){
+            if (visibility == androidx.media3.ui.PlayerView.GONE && uiVisible){
               uiVisible = false
               android.util.Log.d("TAG", "This UI is Hidden")
               closeButton.setVisibility(View.GONE)
             }
-            if (visibility == com.google.android.exoplayer2.ui.StyledPlayerView.VISIBLE && !uiVisible){
+            if (visibility == androidx.media3.ui.PlayerView.VISIBLE && !uiVisible){
               uiVisible = true
               android.util.Log.d("TAG", "This UI is Showen")
               closeButton.setVisibility(View.VISIBLE)
