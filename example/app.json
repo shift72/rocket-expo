@@ -3,7 +3,7 @@
     "name": "rocket-expo-example",
     "slug": "rocket-expo-example",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
@@ -40,10 +40,11 @@
             "kotlinVersion": "1.9.25",
             "composeCompilerVersion": "1.5.15"
           }
-        }
+        },
 
       ],
-      "../plugins/withDesugaringForRocket.js"
+      "../plugins/withDesugaringForRocket.js",
+      "./plugins/withGoogleCastDynamic"
     ]
   }
 }
