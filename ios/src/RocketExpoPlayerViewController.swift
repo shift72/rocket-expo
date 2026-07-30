@@ -63,7 +63,9 @@ class RocketExpoPlayerViewController: UIViewController {
     public override func viewDidAppear(_ animated: Bool) {
         self.eventDelegate.onFullscreenPlayerOpened()
         let delegate = RocketExpoPlayerDelegate(parentViewController: playerViewController, eventDelegate: eventDelegate) {
-            self.dismiss(animated: true)
+            DispatchQueue.main.async {
+                self.dismiss(animated: true)
+            }
         }
         self.player = RocketPlayer.init(player: playerView, hostname: self.hostname, delegate: delegate)
         self.player!.play(slug: self.slug, token: self.token) { maybeError in
@@ -74,7 +76,9 @@ class RocketExpoPlayerViewController: UIViewController {
             case let .some(error):
                 RocketExpoModule.loggerDelegate.error(message: "\(String(describing: Self.self)) error starting playback \(error.type): \(error.message)")
                 self.eventDelegate.onErrorPlaybackAborted(type: "generic")
-                self.dismiss(animated: true)
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true)
+                }
                 break
             }
         }

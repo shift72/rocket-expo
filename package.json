@@ -1,6 +1,6 @@
 {
   "name": "rocket-expo",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "A react native wrapper for Shift72's RocketSDK",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -16,7 +16,8 @@
     "open:android": "open -a \"Android Studio\" example/android",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "tag": "sh ./scripts/tag-release.sh"
+    "tag": "sh ./scripts/tag-release.sh",
+    "run-example": "sh ./scripts/run-example.sh"
   },
   "keywords": [
     "react-native",
@@ -37,7 +38,7 @@
     "react-native": "^0.76.6"
   },
   "devDependencies": {
-    "@types/react": "~19.1.0",
+    "@types/react": "^18.3.1",
     "expo-module-scripts": "^5.0.7",
     "expo": "^52.0.38",
     "react-native": "^0.76.6"
