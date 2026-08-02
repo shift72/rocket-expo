@@ -5377,147 +5377,154 @@
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1397,
+      "offset": 1392,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1631,
+      "offset": 1626,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1805,
+      "offset": 1800,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1853,
+      "offset": 1848,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1901,
+      "offset": 1896,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2069,
+      "offset": 2064,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2175,
+      "offset": 2170,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2202,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 2237,
+      "offset": 2268,
       "length": 32,
       "value": "\"RocketPlayerManager-AssetMaker\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 2969,
+      "offset": 3035,
       "length": 12,
       "value": "\"isPlayable\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 3083,
+      "offset": 3149,
       "length": 56,
       "value": "\"availableMediaCharacteristicsWithMediaSelectionOptions\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 4276,
+      "offset": 4377,
       "length": 8,
       "value": "\"status\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 4385,
+      "offset": 4486,
       "length": 21,
       "value": "\"playbackBufferEmpty\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 4507,
+      "offset": 4608,
       "length": 24,
       "value": "\"playbackLikelyToKeepUp\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 4632,
+      "offset": 4733,
       "length": 20,
       "value": "\"playbackBufferFull\""
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4881,
+      "offset": 4982,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4893,
+      "offset": 4994,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5053,
+      "offset": 5154,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5066,
+      "offset": 5167,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5189,
+      "offset": 5290,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5322,
+      "offset": 5423,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/declantvb\/Code\/rocket-sdk-ios\/Shift72RocketSDK\/Shift72RocketSDK\/RocketPlayerManager.swift",
       "kind": "StringLiteral",
-      "offset": 5510,
+      "offset": 5611,
       "length": 58,
       "value": "\"Heartbeat frequency was 0, this will likely cause issues\""
     },
@@ -5526,7 +5533,7 @@
       "kind": "StringLiteral",
       "offset": 198,
       "length": 7,
-      "value": "\"0.6.2\""
+      "value": "\"0.6.3\""
     }
   ]
 }
