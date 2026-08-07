@@ -10,8 +10,8 @@ import AVKit
 import Shift72RocketSDK
 
 class RocketExpoPlayerViewController: UIViewController {
-    private var playerViewController: AVPlayerViewController!
-    private var playerView: AVPlayer!
+    private var playerViewController: AVPlayerViewController?
+    private var playerView: AVPlayer?
     private var player: RocketPlayer?
     let hostname: String
     let slug: String
@@ -41,19 +41,20 @@ class RocketExpoPlayerViewController: UIViewController {
         super.viewDidLoad()
         
         self.playerView = AVPlayer()
-        self.playerViewController = AVPlayerViewController()
-        self.playerViewController.player = playerView
-        self.addChild(self.playerViewController)
+        let pvc = AVPlayerViewController()
+        self.playerViewController = pvc
+        pvc.player = playerView
+        self.addChild(pvc)
         // make video view
-        self.playerViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(self.playerViewController.view)
+        pvc.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pvc.view)
         NSLayoutConstraint.activate([
-            self.playerViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            self.playerViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            self.playerViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            self.playerViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            pvc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pvc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pvc.view.topAnchor.constraint(equalTo: view.topAnchor),
+            pvc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-        self.playerViewController.didMove(toParent: self)
+        pvc.didMove(toParent: self)
     }
     
     public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -62,12 +63,16 @@ class RocketExpoPlayerViewController: UIViewController {
     
     public override func viewDidAppear(_ animated: Bool) {
         self.eventDelegate.onFullscreenPlayerOpened()
-        let delegate = RocketExpoPlayerDelegate(parentViewController: playerViewController, eventDelegate: eventDelegate) {
+        guard let pvc = self.playerViewController, let pv = self.playerView else {
+            RocketExpoModule.loggerDelegate.error(message: "\(String(describing: Self.self)) AVPlayerVC or AVPlayer nil before viewDidAppear?!")
+            return
+        }
+        let delegate = RocketExpoPlayerDelegate(parentViewController: pvc, eventDelegate: eventDelegate) {
             DispatchQueue.main.async {
                 self.dismiss(animated: true)
             }
         }
-        self.player = RocketPlayer.init(player: playerView, hostname: self.hostname, delegate: delegate)
+        self.player = RocketPlayer.init(player: pv, hostname: self.hostname, delegate: delegate)
         self.player!.play(slug: self.slug, token: self.token) { maybeError in
             switch maybeError {
             case .none:
@@ -85,6 +90,8 @@ class RocketExpoPlayerViewController: UIViewController {
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
+        self.playerView?.pause()
+        self.playerView?.replaceCurrentItem(with: nil)
         self.player = nil
         self.eventDelegate.onFullscreenPlayerClosed()
     }
